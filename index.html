@@ -3,167 +3,193 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hawaii Tours 99 LLC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Hawaiʻi Tours 99 LLC provides premium private transportation and luxury tour services across Oʻahu, including airport transfers, resort transportation, cruise port transfers, and private charters." />
+  <title>Hawaiʻi Tours 99 LLC | Premium Private Transportation Oʻahu</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg-dark: #0b0b0b;
-      --bg-secondary: #141414;
-      --text-light: #ffffff;
-      --text-muted: #cfcfcf;
-      --accent-gold: #c9a24d;
+      --black: #0e0e0e;
+      --charcoal: #1f1f1f;
+      --white: #ffffff;
+      --gold: #c9a44c;
+      --soft-gold: #e7d39c;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
-      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background: var(--bg-dark);
-      color: var(--text-light);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
-    /* HEADER */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header & Navigation */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(10, 10, 10, 0.95);
       z-index: 1000;
-      border-bottom: 1px solid #1f1f1f;
+      background: rgba(14, 14, 14, 0.95);
+      backdrop-filter: blur(10px);
     }
 
-    .nav-container {
-      max-width: 1400px;
+    nav {
+      max-width: 1200px;
       margin: auto;
-      padding: 18px 30px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
     }
 
     .logo {
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--accent-gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--gold);
+      letter-spacing: 1px;
     }
 
     nav ul {
-      list-style: none;
       display: flex;
-      gap: 26px;
+      gap: 1.5rem;
+      list-style: none;
     }
 
-    nav ul li a {
-      text-decoration: none;
-      color: var(--text-light);
-      font-size: 14px;
-      font-weight: 400;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: var(--accent-gold);
+    nav ul li {
+      font-size: 0.9rem;
+      opacity: 0.9;
     }
 
     .cta-btn {
-      background: var(--accent-gold);
-      color: #000;
-      padding: 10px 18px;
-      border-radius: 4px;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s;
+      background: linear-gradient(135deg, var(--gold), var(--soft-gold));
+      color: var(--black);
+      padding: 0.6rem 1.4rem;
+      border-radius: 30px;
+      font-weight: 500;
     }
 
-    .cta-btn:hover {
-      background: #e0b45b;
-    }
-
-    /* HERO */
+    /* Hero */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-      url('/mnt/data/028d2a6f-e86d-4976-b8dc-2209bd0d9d93.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('hero-ht99.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 20px;
+      padding: 0 1.5rem;
     }
 
     .hero h1 {
-      font-size: 46px;
-      font-weight: 600;
-      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.7rem;
+      margin-bottom: 1rem;
     }
 
     .hero p {
-      font-size: 18px;
-      color: var(--text-muted);
-      margin-bottom: 30px;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      font-size: 1rem;
+      opacity: 0.9;
     }
 
-    /* SECTIONS */
+    /* Sections */
     section {
-      padding: 100px 30px;
+      padding: 5rem 2rem;
       max-width: 1200px;
       margin: auto;
     }
 
     section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
       text-align: center;
-      font-size: 32px;
-      margin-bottom: 40px;
-      color: var(--accent-gold);
+      color: var(--gold);
     }
 
-    .services, .fleet, .reviews {
+    /* Services */
+    .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
 
-    .card {
-      background: var(--bg-secondary);
-      padding: 30px;
-      border-radius: 6px;
-      border: 1px solid #1f1f1f;
-      transition: transform 0.3s;
+    .service-box {
+      background: var(--charcoal);
+      padding: 2rem;
+      border-radius: 14px;
+      text-align: center;
+      transition: transform 0.3s ease;
     }
 
-    .card:hover {
+    .service-box:hover {
       transform: translateY(-6px);
     }
 
-    .card h3 {
-      margin-bottom: 12px;
-      color: var(--accent-gold);
+    /* Fleet */
+    .fleet {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
 
-    .card p {
-      font-size: 14px;
-      color: var(--text-muted);
+    .vehicle {
+      background: var(--charcoal);
+      border-radius: 14px;
+      overflow: hidden;
     }
 
-    /* FOOTER */
+    .vehicle img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .vehicle-info {
+      padding: 1.5rem;
+    }
+
+    .vehicle-info h3 {
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .vehicle-info p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    /* Footer */
     footer {
-      background: #000;
-      padding: 40px 20px;
+      background: #070707;
+      padding: 2.5rem 2rem;
       text-align: center;
-      color: var(--text-muted);
-      font-size: 13px;
+      font-size: 0.8rem;
+      opacity: 0.75;
     }
 
-    /* RESPONSIVE */
-    @media(max-width: 900px) {
+    /* Mobile */
+    @media (max-width: 768px) {
       nav ul {
         display: none;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -171,87 +197,74 @@
 <body>
 
 <header>
-  <div class="nav-container">
-    <div class="logo">Hawaii Tours 99 LLC</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#airport">Airport Transfer</a></li>
-        <li><a href="#cruise">Cruise Port Transfer</a></li>
-        <li><a href="#point">Point to Point</a></li>
-        <li><a href="#hourly">Private Hourly Charter</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#fleet">Our Fleets</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-    <a href="#book" class="cta-btn">Book Now</a>
-  </div>
+  <nav>
+    <div class="logo">Hawaiʻi Tours 99 LLC</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#fleet">Fleet</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://customer.moovs.app/hawaiiviptransport/request/newhttps://customer.moovs.app/hawaiiviptransport/request/new" class="cta-btn" target="_blank" rel="noopener noreferrer">Book Now</a>
+  </nav>
 </header>
 
 <section class="hero" id="home">
   <div>
-    <h1>Luxury Black Car Service in Hawaii</h1>
-    <p>Reliable Airport, Cruise Port & Private Chauffeur Services</p>
-    <a href="#book" class="cta-btn">Book Your Ride</a>
+    <h1>Premium Private Transportation Across Oʻahu</h1>
+    <p>Hawaiʻi Tours 99 LLC provides reliable, upscale private transportation services for airport arrivals, resort transfers, cruise terminals, and customized island travel.</p>
+    <a href="https://customer.moovs.app/hawaiiviptransport/request/newhttps://customer.moovs.app/hawaiiviptransport/request/new" class="cta-btn" target="_blank" rel="noopener noreferrer">Book Your Ride</a>
   </div>
 </section>
 
 <section id="services">
-  <h2>Our Services</h2>
+  <h2>Transportation Services</h2>
   <div class="services">
-    <div class="card"><h3>Airport Transfer</h3><p>On-time luxury airport transportation across Hawaii.</p></div>
-    <div class="card"><h3>Cruise Port Transfer</h3><p>Smooth and stylish cruise terminal transfers.</p></div>
-    <div class="card"><h3>Point to Point</h3><p>Direct, private, and efficient travel solutions.</p></div>
-    <div class="card"><h3>Private Hourly Charter</h3><p>Flexible VIP chauffeur services by the hour.</p></div>
+    <div class="service-box">Honolulu Airport (HNL) Private Transfers</div>
+    <div class="service-box">Waikīkī, Ko Olina & Resort Transportation</div>
+    <div class="service-box">Cruise Port Transfers (Pier 2 & 11)</div>
+    <div class="service-box">Turtle Bay & North Shore Service</div>
+    <div class="service-box">Private Hourly Charters</div>
+    <div class="service-box">Meet & Greet at Baggage Claim</div>
   </div>
 </section>
 
 <section id="fleet">
-  <h2>Our Fleet</h2>
+  <h2>Vehicle Options</h2>
   <div class="fleet">
-    <div class="card">
-      <img src="/mnt/data/028d2a6f-e86d-4976-b8dc-2209bd0d9d93.jpg" alt="Luxury SUV & Private Jet" style="width:100%; border-radius:6px; margin-bottom:15px;">
-      <h3>Luxury SUV</h3>
-      <p>Elite black SUV service for VIP airport and private jet transfers.</p>
+    <div class="vehicle">
+      <img src="luxury-suv.jpg" alt="Luxury SUV">
+      <div class="vehicle-info">
+        <h3>First-Class Luxury SUV</h3>
+        <p>Ideal for families and VIP guests<br>Vehicles subject to availability</p>
+      </div>
     </div>
-    <div class="card">
-      <img src="/mnt/data/2023_09_05_11_39_IMG_2185.JPG" alt="Happy Clients with Luxury SUV" style="width:100%; border-radius:6px; margin-bottom:15px;">
-      <h3>VIP Client Experience</h3>
-      <p>Professional chauffeurs delivering unforgettable Hawaii experiences.</p>
+    <div class="vehicle">
+      <img src="business-suv.jpg" alt="Business SUV">
+      <div class="vehicle-info">
+        <h3>Business-Class SUV</h3>
+        <p>Comfortable executive transportation<br>Vehicles subject to availability</p>
+      </div>
     </div>
-  </div>
-    <div class="card"><h3>Executive Sedan</h3><p>Perfect for business and private travel.</p></div>
-  </div>
-</section>
-
-<section id="reviews">
-  <h2>Client Reviews</h2>
-  <div class="reviews">
-    <div class="card"><p>★★★★★<br>Exceptional service and professionalism.</p></div>
-    <div class="card"><p>★★★★★<br>Luxury experience from start to finish.</p></div>
-  </div>
-</section>
-
-<section id="about">
-  <h2>About Us</h2>
-  <p style="text-align:center; color: var(--text-muted); max-width: 800px; margin:auto;">
-    Hawaii Tours 99 LLC delivers premium chauffeur services with professionalism, discretion, and luxury for every client.
-  </p>
-</section>
-
-<section id="faq">
-  <h2>FAQ</h2>
-  <div class="services">
-    <div class="card"><h3>How do I book?</h3><p>Use our booking form or contact us directly.</p></div>
-    <div class="card"><h3>Do you offer airport pickups?</h3><p>Yes, including flight tracking.</p></div>
+    <div class="vehicle">
+      <img src="luxury-sedan.jpg" alt="Luxury Sedan">
+      <div class="vehicle-info">
+        <h3>Luxury Sedan</h3>
+        <p>Perfect for couples and solo travelers<br>Vehicles subject to availability</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
-  © 2026 Hawaii Tours 99 LLC. All Rights Reserved.
+  <p>© 2025 Hawaiʻi Tours 99 LLC · Licensed & Insured · Private Transportation Services on Oʻahu</p>
+  <p>Luxury black car services are offered under our DBA: Hawaii VIP Black Cars</p>
 </footer>
+
+<script>
+  console.log('Hawaiʻi Tours 99 LLC website loaded');
+</script>
 
 </body>
 </html>
