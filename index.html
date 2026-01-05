@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hawaii Tours 99 LLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0b0b0b;
+      --bg-secondary: #141414;
+      --text-light: #ffffff;
+      --text-muted: #cfcfcf;
+      --accent-gold: #c9a24d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.95);
+      z-index: 1000;
+      border-bottom: 1px solid #1f1f1f;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 18px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--accent-gold);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 26px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent-gold);
+    }
+
+    .cta-btn {
+      background: var(--accent-gold);
+      color: #000;
+      padding: 10px 18px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #e0b45b;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('/mnt/data/028d2a6f-e86d-4976-b8dc-2209bd0d9d93.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: var(--accent-gold);
+    }
+
+    .services, .fleet, .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-secondary);
+      padding: 30px;
+      border-radius: 6px;
+      border: 1px solid #1f1f1f;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: var(--accent-gold);
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 900px) {
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo">Hawaii Tours 99 LLC</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#airport">Airport Transfer</a></li>
+        <li><a href="#cruise">Cruise Port Transfer</a></li>
+        <li><a href="#point">Point to Point</a></li>
+        <li><a href="#hourly">Private Hourly Charter</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#fleet">Our Fleets</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a href="#book" class="cta-btn">Book Now</a>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <h1>Luxury Black Car Service in Hawaii</h1>
+    <p>Reliable Airport, Cruise Port & Private Chauffeur Services</p>
+    <a href="#book" class="cta-btn">Book Your Ride</a>
+  </div>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card"><h3>Airport Transfer</h3><p>On-time luxury airport transportation across Hawaii.</p></div>
+    <div class="card"><h3>Cruise Port Transfer</h3><p>Smooth and stylish cruise terminal transfers.</p></div>
+    <div class="card"><h3>Point to Point</h3><p>Direct, private, and efficient travel solutions.</p></div>
+    <div class="card"><h3>Private Hourly Charter</h3><p>Flexible VIP chauffeur services by the hour.</p></div>
+  </div>
+</section>
+
+<section id="fleet">
+  <h2>Our Fleet</h2>
+  <div class="fleet">
+    <div class="card">
+      <img src="/mnt/data/028d2a6f-e86d-4976-b8dc-2209bd0d9d93.jpg" alt="Luxury SUV & Private Jet" style="width:100%; border-radius:6px; margin-bottom:15px;">
+      <h3>Luxury SUV</h3>
+      <p>Elite black SUV service for VIP airport and private jet transfers.</p>
+    </div>
+    <div class="card">
+      <img src="/mnt/data/2023_09_05_11_39_IMG_2185.JPG" alt="Happy Clients with Luxury SUV" style="width:100%; border-radius:6px; margin-bottom:15px;">
+      <h3>VIP Client Experience</h3>
+      <p>Professional chauffeurs delivering unforgettable Hawaii experiences.</p>
+    </div>
+  </div>
+    <div class="card"><h3>Executive Sedan</h3><p>Perfect for business and private travel.</p></div>
+  </div>
+</section>
+
+<section id="reviews">
+  <h2>Client Reviews</h2>
+  <div class="reviews">
+    <div class="card"><p>★★★★★<br>Exceptional service and professionalism.</p></div>
+    <div class="card"><p>★★★★★<br>Luxury experience from start to finish.</p></div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p style="text-align:center; color: var(--text-muted); max-width: 800px; margin:auto;">
+    Hawaii Tours 99 LLC delivers premium chauffeur services with professionalism, discretion, and luxury for every client.
+  </p>
+</section>
+
+<section id="faq">
+  <h2>FAQ</h2>
+  <div class="services">
+    <div class="card"><h3>How do I book?</h3><p>Use our booking form or contact us directly.</p></div>
+    <div class="card"><h3>Do you offer airport pickups?</h3><p>Yes, including flight tracking.</p></div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Hawaii Tours 99 LLC. All Rights Reserved.
+</footer>
+
+</body>
+</html>
