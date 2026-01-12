@@ -1,204 +1,806 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hawaii Tours 99 - Luxury Chauffeur & Executive Transportation</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-<style>
-/* Reset & Base Styles */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Montserrat', sans-serif; color: #fff; background-color: #0a0a0a; line-height: 1.6; overflow-x: hidden; }
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawaii Tours 99 LLC - Premier Luxury Transportation & Black Car Service Oahu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Top Contact Bar */
-.top-bar { background: #111; color: #d4af37; text-align: center; padding: 8px 0; font-size: 0.9rem; }
-.top-bar a { color: #d4af37; font-weight: 600; }
+        body {
+            font-family: 'Georgia', serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-/* Container */
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
 
-/* Header & Menu */
-header { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; background: url('hero-escalade.jpg') center/cover no-repeat; }
-header::after { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); }
-.nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; position: relative; z-index: 2; }
-.nav .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #d4af37; font-weight: 700; }
-.nav ul { display: flex; gap: 30px; list-style: none; }
-.nav ul li { position: relative; text-transform: uppercase; font-weight: 600; }
-.nav .btn-nav { padding: 8px 20px; border: 2px solid #d4af37; color: #d4af37; border-radius: 5px; text-transform: uppercase; font-weight: 600; transition: all 0.3s ease; }
-.nav .btn-nav:hover { background-color: #d4af37; color: #0a0a0a; }
+        .logo {
+            color: #d4af37;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
 
-/* Dropdown Menu */
-.nav ul li:hover > ul { display: block; }
-.nav ul ul { display: none; position: absolute; top: 35px; left: 0; background: #111; padding: 10px 0; border-radius: 5px; min-width: 200px; z-index: 10; }
-.nav ul ul li { padding: 8px 20px; white-space: nowrap; }
-.nav ul ul li:hover { background-color: #222; }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
 
-/* Hero Content */
-.hero-content { text-align: center; position: relative; z-index: 1; margin-top: auto; margin-bottom: auto; }
-.hero-content h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
-.hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
-.btn { display: inline-block; padding: 12px 30px; margin: 0 10px; border: 2px solid #d4af37; color: #d4af37; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; transition: all 0.3s ease; }
-.btn:hover { background-color: #d4af37; color: #0a0a0a; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
 
-/* Sections */
-section { padding: 80px 0; }
-section h2 { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 50px; color: #d4af37; }
+        .nav-links a:hover {
+            color: #d4af37;
+        }
 
-/* Services Cards */
-.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 30px; text-align: center; }
-.service-card { background: #111; padding: 30px; border-radius: 10px; transition: transform 0.3s ease; }
-.service-card:hover { transform: translateY(-10px); }
+        .book-btn {
+            background: #d4af37;
+            color: black;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-/* Fleet */
-.fleet { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 30px; }
-.fleet-card { background: #111; border-radius: 10px; overflow: hidden; transition: transform 0.3s ease; position: relative; }
-.fleet-card:hover { transform: scale(1.05); }
-.fleet-card img { width: 100%; height: 200px; object-fit: cover; }
-.fleet-card .fleet-info { padding: 20px; }
-.fleet-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 10px; color: #d4af37; }
+        .book-btn:hover {
+            background: #c19b2b;
+            color: white;
+        }
 
-/* Reviews */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 30px; }
-.review-card { background: #111; padding: 25px; border-radius: 12px; transition: transform 0.3s ease; }
-.review-card:hover { transform: translateY(-6px); }
-.review-stars { color: #d4af37; margin-bottom: 10px; font-size: 1.1rem; }
-.review-name { font-weight: 600; margin-top: 12px; color: #d4af37; }
-.review-location { font-size: 0.85rem; color: #aaa; }
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23000" width="1200" height="800"/><path fill="%23d4af37" opacity="0.1" d="M0 400 Q300 200 600 400 T1200 400 V800 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
 
-/* Footer */
-footer { background: #111; text-align: center; padding: 30px 0; color: #777; }
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease-in;
+        }
 
-/* Decorative Cars */
-.decorative-car { position: absolute; width: 150px; opacity: 0.3; animation: floatCars 20s linear infinite; }
-@keyframes floatCars { 0% { transform: translateX(-200px); } 100% { transform: translateX(120vw); } }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-/* Responsive */
-@media (max-width: 768px){
-header h1 { font-size: 2rem; }
-header p { font-size: 1rem; }
-.nav ul { flex-direction: column; gap: 15px; margin-top: 10px; }
-.decorative-car { display: none; }
-.nav ul ul { position: static; display: none; }
-.nav ul li:hover > ul { display: block; }
-}
-</style>
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #d4af37;
+            color: black;
+        }
+
+        .btn-primary:hover {
+            background: #c19b2b;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: black;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            background: white;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        }
+
+        .badge {
+            text-align: center;
+            color: #d4af37;
+        }
+
+        .badge-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 5%;
+            background: #f8f8f8;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Fleet Section */
+        .fleet {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .fleet-card {
+            background: #1a1a1a;
+            color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .fleet-card:hover {
+            transform: scale(1.05);
+        }
+
+        .fleet-image {
+            height: 200px;
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .fleet-info {
+            padding: 1.5rem;
+        }
+
+        .fleet-card h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fleet-specs {
+            color: #aaa;
+            margin-bottom: 0.5rem;
+        }
+
+        .fleet-perfect {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 5rem 5%;
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .why-choose .section-title {
+            color: #d4af37;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            padding: 1.5rem;
+        }
+
+        .feature h3 {
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .feature p {
+            color: #ccc;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+        }
+
+        .faq-item h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .faq-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            background: #f8f8f8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            color: #d4af37;
+            font-size: 1.5rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: #d4af37;
+            color: black;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #c19b2b;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto 2rem;
+        }
+
+        .footer-column h4 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #d4af37;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<!-- Top Contact Bar -->
-<div class="top-bar">24/7/365 | (808) 304-8521 | <a href="mailto:hawaiitours99llc@gmail.com">hawaiitours99llc@gmail.com</a></div>
-
-<!-- Header & Navigation -->
-<header>
-    <nav class="nav">
-        <div class="logo">Hawaii Tours 99</div>
-        <ul>
-            <li>
-                <a href="#services">Our Services</a>
-                <ul>
-                    <li><a href="#airport">Airport Transfers</a></li>
-                    <li><a href="#corporate">Corporate Transportation</a></li>
-                    <li><a href="#vip">VIP & Celebrity Services</a></li>
-                    <li><a href="#special-events">Special Events & Private Chauffeur</a></li>
-                    <li><a href="#weddings">Weddings</a></li>
-                    <li><a href="#charters">Luxury Charters</a></li>
-                    <li><a href="#tours">Custom Tours</a></li>
-                    <li><a href="#hourly">Hourly Chauffeur Services</a></li>
-                </ul>
-            </li>
-            <li><a href="#fleet">Fleet</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-        </ul>
-        <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="btn-nav">Book Now</a>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">HAWAII TOURS 99</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#fleet">Fleet</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+            <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="book-btn" target="_blank">BOOK NOW</a>
+        </div>
     </nav>
 
-    <div class="hero-content">
-        <h1>First-Class Transportation. Executive Comfort.</h1>
-        <p>Elite Chauffeur Services for VIPs, Corporate Clients, and Luxury Travelers</p>
-        <a href="#fleet" class="btn">View Fleet</a>
-        <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="btn">Book Now</a>
-    </div>
-
-    <img src="cadillac-escalade1.png" class="decorative-car" style="top:30%; left:-150px;" alt="Decorative Cadillac Escalade">
-    <img src="cadillac-escalade2.png" class="decorative-car" style="top:50%; left:-200px;" alt="Decorative Cadillac Escalade">
-</header>
-
-<!-- Services Section -->
-<section id="services">
-    <div class="container">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="service-card" id="airport">Airport Transfers</div>
-            <div class="service-card" id="corporate">Corporate Transportation</div>
-            <div class="service-card" id="vip">VIP & Celebrity Services</div>
-            <div class="service-card" id="special-events">Special Events & Private Chauffeur</div>
-            <div class="service-card" id="weddings">Weddings</div>
-            <div class="service-card" id="charters">Luxury Charters</div>
-            <div class="service-card" id="tours">Custom Tours</div>
-            <div class="service-card" id="hourly">Hourly Chauffeur Services</div>
-        </div>
-    </div>
-</section>
-
-<!-- Fleet Section -->
-<section id="fleet">
-    <div class="container">
-        <h2>Our Fleet</h2>
-        <div class="fleet">
-            <div class="fleet-card">
-                <img src="firstclass-escalade.jpg" alt="2024 Black Cadillac Escalade">
-                <div class="fleet-info"><h3>First Class</h3><p>2024 Black Cadillac Escalade</p></div>
-            </div>
-            <div class="fleet-card">
-                <img src="businessclass-escalade.jpg" alt="2020 Black Cadillac Escalade">
-                <div class="fleet-info"><h3>Business Class</h3><p>2020 Black Cadillac Escalade</p></div>
-            </div>
-            <div class="fleet-card">
-                <img src="sprinter.jpg" alt="Black Mercedes-Style Sprinter">
-                <div class="fleet-info"><h3>Executive Van</h3><p>Black Mercedes-Style Sprinter</p></div>
-            </div>
-            <div class="fleet-card">
-                <img src="sedan.jpg" alt="Black Executive Sedan">
-                <div class="fleet-info"><h3>Luxury Sedan</h3><p>Black Executive Sedan</p></div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hawaii's Premier Luxury Transportation & Black Car Service</h1>
+            <h2>Driven by Excellence. Guided by Aloha.</h2>
+            <p>Experience the island's gold standard in luxury transportation and black car service. From the moment your chauffeur arrives, you're welcomed into a world of comfort, professionalism, and Hawaiian hospitality. Whether you're traveling to Waikīkī, Ko Olina, Honolulu Airport, or across Oʻahu for a special event, Hawaii Tours 99 LLC delivers a level of refinement that transforms every ride into an unforgettable experience.</p>
+            <div class="cta-buttons">
+                <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="btn-primary" target="_blank">BOOK NOW</a>
+                <a href="tel:8083048521" class="btn-secondary">CALL (808) 304-8521</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- About Section -->
-<section id="about">
-    <div class="container">
-        <h2>About Hawaii Tours 99</h2>
-        <p style="text-align:center; max-width:800px; margin:0 auto;">Hawaii Tours 99 offers premium chauffeur and executive transportation services across Hawaii. We provide first-class vehicles, professional chauffeurs, and unmatched reliability for corporate clients, VIPs, and luxury travelers.</p>
-    </div>
-</section>
-
-<!-- Reviews Section -->
-<section id="reviews">
-    <div class="container">
-        <h2>Client Reviews</h2>
-        <div class="reviews-grid">
-            <!-- Repeat 15 review cards -->
-            "+Array.from({length:15}).map((_,i)=>`<div class="review-card"><div class="review-stars">★★★★★</div><p>Excellent service and luxury experience #${i+1}!</p><div class="review-name">Client ${i+1}</div><div class="review-location">Honolulu, HI</div></div>`).join('')+"
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+        <div class="badge">
+            <div class="badge-icon">✓</div>
+            <div>Licensed & Insured</div>
         </div>
-    </div>
-</section>
+        <div class="badge">
+            <div class="badge-icon">★</div>
+            <div>5-Star Service</div>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">⏰</div>
+            <div>24/7/365 Available</div>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">🌺</div>
+            <div>Hawaiian Hospitality</div>
+        </div>
+    </section>
 
-<!-- Footer -->
-<footer>&copy; 2026 Hawaii Tours 99. All Rights Reserved.</footer>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Premium Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <div class="service-icon">✈️</div>
+                <h3>Airport Transfers</h3>
+                <p>Efficient Oahu airport transfers with luxury black cars for a stress-free start to your Hawaiian adventure. Professional meet & greet service available.</p>
+                <a href="#contact">Reserve Your Transfer →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📍</div>
+                <h3>Point-to-Point Transfers</h3>
+                <p>Luxury point-to-point transfer services across the island, ensuring a seamless journey from pick-up to drop-off with personalized service.</p>
+                <a href="#contact">Reserve Transfer →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⏱️</div>
+                <h3>Hourly Charter</h3>
+                <p>Explore Oahu in style with our personalized black car hourly charter service. Perfect for tours, events, or a day of island exploration.</p>
+                <a href="#contact">Reserve Charter →</a>
+            </div>
+        </div>
+    </section>
 
-<script>
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-});
-</script>
+    <!-- Fleet Section -->
+    <section class="fleet" id="fleet">
+        <h2 class="section-title">Our Luxury Fleet</h2>
+        <div class="fleet-grid">
+            <div class="fleet-card">
+                <div class="fleet-image">🚗</div>
+                <div class="fleet-info">
+                    <h3>Luxury Sedan</h3>
+                    <div class="fleet-specs">👥 2-3 Passengers</div>
+                    <div class="fleet-specs">🧳 3 Bags</div>
+                    <div class="fleet-perfect">Perfect for: Airport transfers, business travel, couples</div>
+                </div>
+            </div>
+            <div class="fleet-card">
+                <div class="fleet-image">🚙</div>
+                <div class="fleet-info">
+                    <h3>Luxury SUV</h3>
+                    <div class="fleet-specs">👥 5-6 Passengers</div>
+                    <div class="fleet-specs">🧳 5-7 Bags</div>
+                    <div class="fleet-perfect">Perfect for: Families, groups, resort transfers</div>
+                </div>
+            </div>
+            <div class="fleet-card">
+                <div class="fleet-image">🚐</div>
+                <div class="fleet-info">
+                    <h3>Luxury Van</h3>
+                    <div class="fleet-specs">👥 10-14 Passengers</div>
+                    <div class="fleet-specs">🧳 10-14 Bags</div>
+                    <div class="fleet-perfect">Perfect for: Large families, corporate groups, events</div>
+                </div>
+            </div>
+            <div class="fleet-card">
+                <div class="fleet-image">🎩</div>
+                <div class="fleet-info">
+                    <h3>Stretch Limousine</h3>
+                    <div class="fleet-specs">👥 8-10 Passengers</div>
+                    <div class="fleet-specs">🧳 6-8 Bags</div>
+                    <div class="fleet-perfect">Perfect for: Weddings, proms, special celebrations</div>
+                </div>
+            </div>
+            <div class="fleet-card">
+                <div class="fleet-image">🚌</div>
+                <div class="fleet-info">
+                    <h3>Premium Sprinter</h3>
+                    <div class="fleet-specs">👥 12-14 Passengers</div>
+                    <div class="fleet-specs">🧳 12 Bags</div>
+                    <div class="fleet-perfect">Perfect for: Corporate events, group tours, airport transfers</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <h2 class="section-title">The Hawaii Tours 99 Difference</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <h3>Professional Chauffeurs</h3>
+                <p>Licensed, insured, and trained in Hawaiian hospitality</p>
+            </div>
+            <div class="feature">
+                <h3>Immaculate Fleet</h3>
+                <p>Meticulously maintained luxury vehicles with premium amenities</p>
+            </div>
+            <div class="feature">
+                <h3>24/7 Availability</h3>
+                <p>Round-the-clock service for arrivals, departures, and emergencies</p>
+            </div>
+            <div class="feature">
+                <h3>Punctuality Guaranteed</h3>
+                <p>Real-time flight tracking and traffic monitoring</p>
+            </div>
+            <div class="feature">
+                <h3>Island Expertise</h3>
+                <p>Local knowledge for scenic routes and hidden gems</p>
+            </div>
+            <div class="feature">
+                <h3>All-Inclusive Pricing</h3>
+                <p>No hidden fees, transparent rates</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>I just landed at the airport, where do I meet my chauffeur?</h3>
+                <p>Your driver will be waiting at the designated pre-arranged loading zone with your name displayed on a professional sign. Your confirmation email will include specific pickup instructions and your driver's contact information.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if my flight gets canceled or delayed?</h3>
+                <p>We monitor all flights in real-time. If your flight is delayed, we automatically adjust your pickup time at no additional charge. If your flight is canceled, contact us immediately at (808) 304-8521, and we'll reschedule your service.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is your cancellation policy?</h3>
+                <p>Cancellations 48+ hours in advance receive a full refund. Cancellations 24-48 hours in advance receive a 50% refund or full credit. Cancellations less than 24 hours receive no refund, though credits may be issued for emergencies.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you offer lei greetings?</h3>
+                <p>Absolutely! We offer traditional Hawaiian lei greetings for airport arrivals. Choose from fresh orchid lei, plumeria lei, or premium mixed flower lei. Add this service when booking or call to arrange.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <strong>Phone</strong><br>
+                        <a href="tel:8083048521">(808) 304-8521</a><br>
+                        Available 24/7/365
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:hawaiitours99llc@gmail.com">hawaiitours99llc@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🏢</div>
+                    <div>
+                        <strong>Service Area</strong><br>
+                        Island of Oʻahu, Hawaii
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Book Your Luxury Experience</h3>
+                <form action="https://customer.moovs.app/hawaiiviptransport/new/info" method="get" target="_blank">
+                    <div class="form-group">
+                        <label>Name *</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Service Type</label>
+                        <select>
+                            <option>Airport Transfer</option>
+                            <option>Hourly Charter</option>
+                            <option>Wedding</option>
+                            <option>Corporate</option>
+                            <option>Special Event</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">BOOK NOW</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#fleet">Our Fleet</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Airport Transfers</a></li>
+                    <li><a href="#services">Hourly Charter</a></li>
+                    <li><a href="#services">Corporate Transportation</a></li>
+                    <li><a href="#services">Wedding Services</a></li>
+                    <li><a href="#services">Group Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <p>Hawaii Tours 99 LLC<br>
+                📞 (808) 304-8521<br>
+                📧 hawaiitours99llc@gmail.com<br>
+                🕒 Available 24/7/365<br>
+                Island of Oʻahu, Hawaii</p>
+            </div>
+            <div class="footer-column">
+                <h4>Stay Connected</h4>
+                <p>Follow our journey and see the latest from paradise</p>
+                <div style="margin-top: 1rem;">
+                    <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="btn-primary" target="_blank" style="display: inline-block; padding: 0.8rem 1.5rem;">BOOK NOW</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Hawaii Tours 99 LLC. All Rights Reserved.</p>
+            <p>Licensed & Insured | Hawaiian Tourism Approved | Professional Chauffeur Services</p>
+        </div>
+    </footer>
 </body>
 </html>
