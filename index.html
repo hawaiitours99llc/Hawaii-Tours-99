@@ -59,6 +59,14 @@ section h2 { text-align: center; font-family: 'Playfair Display', serif; font-si
 .fleet-card .fleet-info { padding: 20px; }
 .fleet-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 10px; color: #d4af37; }
 
+/* Reviews */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 30px; }
+.review-card { background: #111; padding: 25px; border-radius: 12px; transition: transform 0.3s ease; }
+.review-card:hover { transform: translateY(-6px); }
+.review-stars { color: #d4af37; margin-bottom: 10px; font-size: 1.1rem; }
+.review-name { font-weight: 600; margin-top: 12px; color: #d4af37; }
+.review-location { font-size: 0.85rem; color: #aaa; }
+
 /* Footer */
 footer { background: #111; text-align: center; padding: 30px 0; color: #777; }
 
@@ -102,6 +110,7 @@ header p { font-size: 1rem; }
             </li>
             <li><a href="#fleet">Fleet</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
         </ul>
         <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="btn-nav">Book Now</a>
     </nav>
@@ -113,7 +122,6 @@ header p { font-size: 1rem; }
         <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="btn">Book Now</a>
     </div>
 
-    <!-- Decorative Cars -->
     <img src="cadillac-escalade1.png" class="decorative-car" style="top:30%; left:-150px;" alt="Decorative Cadillac Escalade">
     <img src="cadillac-escalade2.png" class="decorative-car" style="top:50%; left:-200px;" alt="Decorative Cadillac Escalade">
 </header>
@@ -165,6 +173,17 @@ header p { font-size: 1rem; }
     <div class="container">
         <h2>About Hawaii Tours 99</h2>
         <p style="text-align:center; max-width:800px; margin:0 auto;">Hawaii Tours 99 offers premium chauffeur and executive transportation services across Hawaii. We provide first-class vehicles, professional chauffeurs, and unmatched reliability for corporate clients, VIPs, and luxury travelers.</p>
+    </div>
+</section>
+
+<!-- Reviews Section -->
+<section id="reviews">
+    <div class="container">
+        <h2>Client Reviews</h2>
+        <div class="reviews-grid">
+            <!-- Repeat 15 review cards -->
+            "+Array.from({length:15}).map((_,i)=>`<div class="review-card"><div class="review-stars">★★★★★</div><p>Excellent service and luxury experience #${i+1}!</p><div class="review-name">Client ${i+1}</div><div class="review-location">Honolulu, HI</div></div>`).join('')+"
+        </div>
     </div>
 </section>
 
