@@ -88,7 +88,7 @@ header p { font-size: 1rem; }
 <body>
 
 <!-- Top Contact Bar -->
-<div class="top-bar" id="topBar">24/7/365 | (808) 304-8521 | <a href="mailto:hawaiitours99llc@gmail.com">hawaiitours99llc@gmail.com</a></div>
+<div class="top-bar">24/7/365 | (808) 304-8521 | <a href="mailto:hawaiitours99llc@gmail.com">hawaiitours99llc@gmail.com</a></div>
 
 <!-- Header & Navigation -->
 <header>
@@ -126,9 +126,78 @@ header p { font-size: 1rem; }
     <img src="cadillac-escalade2.png" class="decorative-car" style="top:50%; left:-200px;" alt="Decorative Cadillac Escalade">
 </header>
 
+<!-- Services Section -->
+<section id="services">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card" id="airport">Airport Transfers</div>
+            <div class="service-card" id="corporate">Corporate Transportation</div>
+            <div class="service-card" id="vip">VIP & Celebrity Services</div>
+            <div class="service-card" id="special-events">Special Events & Private Chauffeur</div>
+            <div class="service-card" id="weddings">Weddings</div>
+            <div class="service-card" id="charters">Luxury Charters</div>
+            <div class="service-card" id="tours">Custom Tours</div>
+            <div class="service-card" id="hourly">Hourly Chauffeur Services</div>
+        </div>
+    </div>
+</section>
+
+<!-- Fleet Section -->
+<section id="fleet">
+    <div class="container">
+        <h2>Our Fleet</h2>
+        <div class="fleet">
+            <div class="fleet-card">
+                <img src="firstclass-escalade.jpg" alt="2024 Black Cadillac Escalade">
+                <div class="fleet-info"><h3>First Class</h3><p>2024 Black Cadillac Escalade</p></div>
+            </div>
+            <div class="fleet-card">
+                <img src="businessclass-escalade.jpg" alt="2020 Black Cadillac Escalade">
+                <div class="fleet-info"><h3>Business Class</h3><p>2020 Black Cadillac Escalade</p></div>
+            </div>
+            <div class="fleet-card">
+                <img src="sprinter.jpg" alt="Black Mercedes-Style Sprinter">
+                <div class="fleet-info"><h3>Executive Van</h3><p>Black Mercedes-Style Sprinter</p></div>
+            </div>
+            <div class="fleet-card">
+                <img src="sedan.jpg" alt="Black Executive Sedan">
+                <div class="fleet-info"><h3>Luxury Sedan</h3><p>Black Executive Sedan</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <h2>About Hawaii Tours 99</h2>
+        <p style="text-align:center; max-width:800px; margin:0 auto;">Hawaii Tours 99 offers premium chauffeur and executive transportation services across Hawaii. We provide first-class vehicles, professional chauffeurs, and unmatched reliability for corporate clients, VIPs, and luxury travelers.</p>
+    </div>
+</section>
+
+<!-- Reviews Section -->
+<section id="reviews">
+    <div class="container">
+        <h2>Client Reviews</h2>
+        <div class="reviews-grid">
+            <!-- Repeat 15 review cards -->
+            "+Array.from({length:15}).map((_,i)=>`<div class="review-card"><div class="review-stars">★★★★★</div><p>Excellent service and luxury experience #${i+1}!</p><div class="review-name">Client ${i+1}</div><div class="review-location">Honolulu, HI</div></div>`).join('')+"
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>&copy; 2026 Hawaii Tours 99. All Rights Reserved.</footer>
+
 <script>
-// Add "Serving Oahu islandwide" dynamically
-document.getElementById('topBar').innerHTML += ' | Serving Oahu islandwide';
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+});
 </script>
 
 </body>
