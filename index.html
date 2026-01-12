@@ -52,14 +52,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 0.8rem 2rem;
+      position: relative;
     }
 
     .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: var(--gold);
-      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo img {
+      height: 44px;
+      width: auto;
     }
 
     nav ul {
@@ -71,6 +76,7 @@
     nav ul li {
       font-size: 0.9rem;
       opacity: 0.9;
+      position: relative;
     }
 
     .cta-btn {
@@ -79,6 +85,29 @@
       padding: 0.6rem 1.4rem;
       border-radius: 30px;
       font-weight: 500;
+    }
+
+    /* Contact dropdown menu */
+    .contact-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: var(--charcoal);
+      padding: 1.5rem;
+      width: 300px;
+      border-radius: 12px;
+      z-index: 2000;
+      font-size: 0.9rem;
+    }
+
+    nav ul li:hover .contact-dropdown {
+      display: block;
+    }
+
+    .contact-dropdown h3 {
+      margin-top: 1rem;
+      color: var(--gold);
     }
 
     .hero {
@@ -91,9 +120,20 @@
       padding: 0 1.5rem;
     }
 
+    .hero-logo {
+      max-width: 520px;
+      width: 100%;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: auto;
+    }
+
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.7rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
@@ -181,6 +221,14 @@
         display: none;
       }
 
+      .logo img {
+        height: 38px;
+      }
+
+      .hero-logo {
+        max-width: 360px;
+      }
+
       .hero h1 {
         font-size: 2rem;
       }
@@ -191,13 +239,24 @@
 
 <header>
   <nav>
-    <div class="logo">Hawaiʻi Tours 99 LLC</div>
+    <div class="logo">
+      <img src="logo-hawaii-tours-99.png" alt="Hawaii Tours 99 Luxury Transportation Logo">
+    </div>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#fleet">Fleet</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li>
+        <a href="#contact">Contact</a>
+        <div class="contact-dropdown">
+          <p><strong>Name:</strong> Hawaii Tours 99 LLC</p>
+          <p><strong>Open:</strong> 24/7/365</p>
+          <p><strong>Email:</strong> <a href="mailto:hawaiitours99llc@gmail.com" style="color: var(--gold);">hawaiitours99llc@gmail.com</a></p>
+          <h3>Why Choose Us?</h3>
+          <p>We pride ourselves on delivering exceptional customer service and ensuring that our clients have a stress-free travel experience. Our vehicles are clean, well-maintained, and equipped with the latest technology to ensure your safety and comfort. Book your ride with us today!</p>
+        </div>
+      </li>
     </ul>
     <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="cta-btn" target="_blank" rel="noopener noreferrer">Book Now</a>
   </nav>
@@ -205,6 +264,9 @@
 
 <section class="hero" id="home">
   <div>
+    <div class="hero-logo">
+      <img src="logo-hawaii-tours-99.png" alt="Hawaii Tours 99 Luxury Transportation Logo">
+    </div>
     <h1>Premium Private Transportation Across Oʻahu</h1>
     <p>Hawaiʻi Tours 99 LLC provides reliable, upscale private transportation services for airport arrivals, resort transfers, cruise terminals, and customized island travel.</p>
     <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="cta-btn" target="_blank" rel="noopener noreferrer">Book Your Ride</a>
