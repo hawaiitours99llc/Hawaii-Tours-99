@@ -3,804 +3,705 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hawaii Tours 99 LLC - Premier Luxury Transportation & Black Car Service Oahu</title>
+    <title>Hawaii Tours 99 LLC | Premium Oʻahu Car Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap');
+        
+        :root {
+            --gold: #c5a059;
+            --navy: #0a192f;
+            --soft-gold: #fcf8f1;
         }
 
         body {
-            font-family: 'Georgia', serif;
-            color: #1a1a1a;
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
+        h1, h2, h3, h4, .luxury-font {
+            font-family: 'Playfair Display', serif;
         }
 
-        .logo {
-            color: #d4af37;
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+        .bg-navy { background-color: var(--navy); }
+        .text-gold { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover {
-            color: #d4af37;
-        }
-
-        .book-btn {
-            background: #d4af37;
-            color: black;
-            padding: 0.7rem 1.5rem;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .book-btn:hover {
-            background: #c19b2b;
-            color: white;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23000" width="1200" height="800"/><path fill="%23d4af37" opacity="0.1" d="M0 400 Q300 200 600 400 T1200 400 V800 H0 Z"/></svg>');
+        .hero-gradient {
+            background: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.8)), 
+                        url('https://images.unsplash.com/photo-1505852679233-d9fd70aff56d?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            background-attachment: fixed;
+        }
+
+        .lang-btn.active {
+            background-color: var(--gold);
             color: white;
-            position: relative;
+            border-color: var(--gold);
         }
 
-        .hero-content {
-            max-width: 900px;
-            padding: 2rem;
-            animation: fadeIn 1.5s ease-in;
-        }
+        /* Language visibility logic */
+        [data-lang] { display: none; }
+        body.lang-en [data-lang="en"] { display: block; }
+        body.lang-en span[data-lang="en"], body.lang-en a[data-lang="en"], body.lang-en i[data-lang="en"] { display: inline; }
+        
+        body.lang-jp [data-lang="jp"] { display: block; }
+        body.lang-jp span[data-lang="jp"], body.lang-jp a[data-lang="jp"], body.lang-jp i[data-lang="jp"] { display: inline; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        body.lang-es [data-lang="es"] { display: block; }
+        body.lang-es span[data-lang="es"], body.lang-es a[data-lang="es"], body.lang-es i[data-lang="es"] { display: inline; }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
+        body.lang-zh [data-lang="zh"] { display: block; }
+        body.lang-zh span[data-lang="zh"], body.lang-zh a[data-lang="zh"], body.lang-zh i[data-lang="zh"] { display: inline; }
 
-        .hero h2 {
-            font-size: 2rem;
-            color: #d4af37;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
+        .service-card:hover .service-icon { transform: translateY(-5px) scale(1.1); }
+        .service-icon { transition: all 0.3s ease; }
+        
+        .legal-text p { margin-bottom: 1.5rem; line-height: 1.7; color: #4b5563; }
+        .legal-text h3 { margin-top: 2.5rem; margin-bottom: 1rem; color: var(--navy); font-weight: 700; font-size: 1.25rem; }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 1rem 2.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: #d4af37;
-            color: black;
-        }
-
-        .btn-primary:hover {
-            background: #c19b2b;
-            transform: scale(1.05);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: black;
-        }
-
-        /* Trust Badges */
-        .trust-badges {
-            background: white;
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 2rem;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-        }
-
-        .badge {
-            text-align: center;
-            color: #d4af37;
-        }
-
-        .badge-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 5rem 5%;
-            background: #f8f8f8;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1a1a1a;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .service-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(212,175,55,0.3);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: #d4af37;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .service-card p {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card a {
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        /* Fleet Section */
-        .fleet {
-            padding: 5rem 5%;
-            background: white;
-        }
-
-        .fleet-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .page-content { display: none; }
+        .page-content.active { display: block; }
+        .nav-link.active-page { color: var(--gold); }
 
         .fleet-card {
-            background: #1a1a1a;
-            color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            transition: all 0.4s ease;
         }
-
         .fleet-card:hover {
-            transform: scale(1.05);
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
         }
 
-        .fleet-image {
-            height: 200px;
-            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-        }
-
-        .fleet-info {
-            padding: 1.5rem;
-        }
-
-        .fleet-card h3 {
-            color: #d4af37;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .fleet-specs {
-            color: #aaa;
-            margin-bottom: 0.5rem;
-        }
-
-        .fleet-perfect {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: #ccc;
-        }
-
-        /* Why Choose Us */
-        .why-choose {
-            padding: 5rem 5%;
-            background: #1a1a1a;
-            color: white;
-        }
-
-        .why-choose .section-title {
-            color: #d4af37;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature {
-            padding: 1.5rem;
-        }
-
-        .feature h3 {
-            color: #d4af37;
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-
-        .feature p {
-            color: #ccc;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 5rem 5%;
-            background: white;
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 2rem;
-        }
-
-        .faq-item h3 {
-            color: #d4af37;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .faq-item p {
-            color: #666;
-            line-height: 1.8;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 5rem 5%;
-            background: #f8f8f8;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .contact-info h3 {
-            color: #d4af37;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-item {
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            color: #d4af37;
-            font-size: 1.5rem;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #1a1a1a;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            background: #d4af37;
-            color: black;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background: #c19b2b;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 3rem 5%;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto 2rem;
-        }
-
-        .footer-column h4 {
-            color: #d4af37;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-column a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-column a:hover {
-            color: #d4af37;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
-            color: #888;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero h2 {
-                font-size: 1.3rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
+        .location-overlay {
+            background: linear-gradient(to top, rgba(10, 25, 47, 0.9), transparent);
         }
     </style>
 </head>
-<body>
+<body class="bg-white text-slate-900 lang-en">
+
+    <!-- Top Info Bar -->
+    <div class="bg-navy text-white py-2 px-4 border-b border-gold/20 text-[10px] md:text-xs tracking-wider">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex space-x-1.5" id="language-switcher">
+                <button onclick="setLanguage('en')" class="lang-btn px-2 py-0.5 rounded border border-white/20 transition hover:bg-gold active" id="btn-en">EN</button>
+                <button onclick="setLanguage('jp')" class="lang-btn px-2 py-0.5 rounded border border-white/20 transition hover:bg-gold" id="btn-jp">日本語</button>
+                <button onclick="setLanguage('es')" class="lang-btn px-2 py-0.5 rounded border border-white/20 transition hover:bg-gold" id="btn-es">ES</button>
+                <button onclick="setLanguage('zh')" class="lang-btn px-2 py-0.5 rounded border border-white/20 transition hover:bg-gold" id="btn-zh">中文</button>
+            </div>
+            
+            <div class="flex flex-wrap justify-center md:justify-end items-center gap-3 md:gap-6 uppercase">
+                <span class="flex items-center">
+                    <i class="fa-solid fa-clock text-gold mr-1.5"></i>
+                    <span data-lang="en">SERVE 24/7/365</span>
+                    <span data-lang="jp">24時間年中無休</span>
+                    <span data-lang="es">SERVICIO 24/7/365</span>
+                    <span data-lang="zh">24/7 全天候服务</span>
+                </span>
+                <span class="hidden md:inline text-white/30">|</span>
+                <span class="flex items-center">
+                    <i class="fa-solid fa-location-dot text-gold mr-1.5"></i>
+                    <span data-lang="en">Islandwide</span>
+                    <span data-lang="jp">島内全域対応</span>
+                    <span data-lang="es">Toda la Isla</span>
+                    <span data-lang="zh">全岛服务</span>
+                </span>
+                <span class="hidden md:inline text-white/30">|</span>
+                <a href="tel:8083048521" class="hover:text-gold transition font-bold flex items-center">
+                    <i class="fa-solid fa-phone text-gold mr-1.5"></i> (808) 304-8521
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav>
-        <div class="logo">HAWAII TOURS 99</div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#fleet">Fleet</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-            <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="book-btn" target="_blank">BOOK NOW</a>
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center">
+            <!-- Logo Section -->
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center h-full">
+                <img src="5bc57dc2-9873-40b7-a0ec-ed431b7773a9.jpg" 
+                     alt="Hawaii Tours 99 LLC" 
+                     class="h-16 md:h-20 w-auto object-contain block"
+                     style="max-width: 280px;"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                
+                <div class="hidden">
+                    <span class="text-xl md:text-2xl font-bold luxury-font text-navy">Hawaii Tours <span class="text-gold">99</span></span>
+                    <p class="text-[8px] md:text-[10px] tracking-[0.3em] uppercase font-bold text-slate-400 -mt-1">Honolulu Luxury Transportation</p>
+                </div>
+            </a>
+            
+            <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-navy">
+                <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-gold transition nav-link" id="nav-home">
+                    <span data-lang="en">Home</span><span data-lang="jp">ホーム</span><span data-lang="es">Inicio</span><span data-lang="zh">首页</span>
+                </a>
+                <a href="javascript:void(0)" onclick="navigateTo('services')" class="hover:text-gold transition nav-link" id="nav-services">
+                    <span data-lang="en">Services</span><span data-lang="jp">サービス</span><span data-lang="es">Servicios</span><span data-lang="zh">服务项目</span>
+                </a>
+                <a href="javascript:void(0)" onclick="navigateTo('fleet')" class="hover:text-gold transition nav-link" id="nav-fleet">
+                    <span data-lang="en">Fleet</span><span data-lang="jp">車両紹介</span><span data-lang="es">Flota</span><span data-lang="zh">车队展示</span>
+                </a>
+                <a href="javascript:void(0)" onclick="navigateTo('terms')" class="hover:text-gold transition nav-link" id="nav-terms">
+                    <span data-lang="en">Terms</span><span data-lang="jp">規約</span><span data-lang="es">Términos</span><span data-lang="zh">条款</span>
+                </a>
+                <a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-gold transition nav-link" id="nav-contact">
+                    <span data-lang="en">Contact</span><span data-lang="jp">お問い合わせ</span><span data-lang="es">Contacto</span><span data-lang="zh">联系我们</span>
+                </a>
+                <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-white px-8 py-3 rounded hover:bg-navy transition shadow-lg ml-4">
+                    <span data-lang="en">Book Now</span><span data-lang="jp">今すぐ予約</span><span data-lang="es">Reservar</span><span data-lang="zh">立即预订</span>
+                </a>
+            </div>
+            
+            <button class="lg:hidden text-navy text-2xl" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 p-4 space-y-4 text-xs font-bold uppercase tracking-widest">
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="block py-2">
+                 <span data-lang="en">Home</span><span data-lang="jp">ホーム</span><span data-lang="es">Inicio</span><span data-lang="zh">首页</span>
+            </a>
+            <hr>
+            <a href="javascript:void(0)" onclick="navigateTo('services')" class="block py-2">
+                 <span data-lang="en">Services</span><span data-lang="jp">サービス</span><span data-lang="es">Servicios</span><span data-lang="zh">服务项目</span>
+            </a>
+            <hr>
+            <a href="javascript:void(0)" onclick="navigateTo('fleet')" class="block py-2">
+                 <span data-lang="en">Fleet</span><span data-lang="jp">車両紹介</span><span data-lang="es">Flota</span><span data-lang="zh">车队展示</span>
+            </a>
+            <hr>
+            <a href="javascript:void(0)" onclick="navigateTo('terms')" class="block py-2">
+                 <span data-lang="en">Terms</span><span data-lang="jp">規約</span><span data-lang="es">Términos</span><span data-lang="zh">条款</span>
+            </a>
+            <hr>
+            <a href="javascript:void(0)" onclick="navigateTo('contact')" class="block py-2">
+                 <span data-lang="en">Contact</span><span data-lang="jp">お問い合わせ</span><span data-lang="es">Contacto</span><span data-lang="zh">联系我们</span>
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Hawaii's Premier Luxury Transportation & Black Car Service</h1>
-            <h2>Driven by Excellence. Guided by Aloha.</h2>
-            <p>Experience the island's gold standard in luxury transportation and black car service. From the moment your chauffeur arrives, you're welcomed into a world of comfort, professionalism, and Hawaiian hospitality. Whether you're traveling to Waikīkī, Ko Olina, Honolulu Airport, or across Oʻahu for a special event, Hawaii Tours 99 LLC delivers a level of refinement that transforms every ride into an unforgettable experience.</p>
-            <div class="cta-buttons">
-                <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="btn-primary" target="_blank">BOOK NOW</a>
-                <a href="tel:8083048521" class="btn-secondary">CALL (808) 304-8521</a>
-            </div>
-        </div>
-    </section>
+    <!-- Page: HOME -->
+    <div id="page-home" class="page-content active">
+        <section class="hero-gradient h-[90vh] flex items-center px-4">
+            <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2">
+                <div class="text-white">
+                    <div data-lang="en">
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Elevated Travel <br><span class="text-gold">In Paradise</span></h1>
+                        <p class="text-lg md:text-xl mb-10 text-slate-200 max-w-lg leading-relaxed">Honolulu Luxury Transportation: Experience Oʻahu with unparalleled comfort, professional chauffeurs, and a fleet designed for the most discerning travelers.</p>
+                    </div>
+                    <div data-lang="jp">
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">パラダイスでの<br><span class="text-gold">最上級の旅</span></h1>
+                        <p class="text-lg md:text-xl mb-10 text-slate-200 max-w-lg leading-relaxed">ホノルルの高級送迎：最高級の車両と熟練のドライバーによる、比類なきオアフ島の旅をご体験ください。</p>
+                    </div>
+                    <div data-lang="es">
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Viajes Elevados <br><span class="text-gold">en el Paraíso</span></h1>
+                        <p class="text-lg md:text-xl mb-10 text-slate-200 max-w-lg leading-relaxed">Transporte de Lujo en Honolulu: Experimente Oʻahu con una comodidad inigualable, chóferes profesionales y una flota diseñada para los viajeros más exigentes.</p>
+                    </div>
+                    <div data-lang="zh">
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">天堂中的<br><span class="text-gold">顶级旅程</span></h1>
+                        <p class="text-lg md:text-xl mb-10 text-slate-200 max-w-lg leading-relaxed">檀香山豪华交通：通过无与伦比的舒适感、专业的司机和为最挑剔的旅客设计的车队，体验欧胡岛之美。</p>
+                    </div>
 
-    <!-- Trust Badges -->
-    <section class="trust-badges">
-        <div class="badge">
-            <div class="badge-icon">✓</div>
-            <div>Licensed & Insured</div>
-        </div>
-        <div class="badge">
-            <div class="badge-icon">★</div>
-            <div>5-Star Service</div>
-        </div>
-        <div class="badge">
-            <div class="badge-icon">⏰</div>
-            <div>24/7/365 Available</div>
-        </div>
-        <div class="badge">
-            <div class="badge-icon">🌺</div>
-            <div>Hawaiian Hospitality</div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <h2 class="section-title">Our Premium Services</h2>
-        <div class="service-cards">
-            <div class="service-card">
-                <div class="service-icon">✈️</div>
-                <h3>Airport Transfers</h3>
-                <p>Efficient Oahu airport transfers with luxury black cars for a stress-free start to your Hawaiian adventure. Professional meet & greet service available.</p>
-                <a href="#contact">Reserve Your Transfer →</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📍</div>
-                <h3>Point-to-Point Transfers</h3>
-                <p>Luxury point-to-point transfer services across the island, ensuring a seamless journey from pick-up to drop-off with personalized service.</p>
-                <a href="#contact">Reserve Transfer →</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⏱️</div>
-                <h3>Hourly Charter</h3>
-                <p>Explore Oahu in style with our personalized black car hourly charter service. Perfect for tours, events, or a day of island exploration.</p>
-                <a href="#contact">Reserve Charter →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fleet Section -->
-    <section class="fleet" id="fleet">
-        <h2 class="section-title">Our Luxury Fleet</h2>
-        <div class="fleet-grid">
-            <div class="fleet-card">
-                <div class="fleet-image">🚗</div>
-                <div class="fleet-info">
-                    <h3>Luxury Sedan</h3>
-                    <div class="fleet-specs">👥 2-3 Passengers</div>
-                    <div class="fleet-specs">🧳 3 Bags</div>
-                    <div class="fleet-perfect">Perfect for: Airport transfers, business travel, couples</div>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-white px-10 py-5 text-center font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-navy transition shadow-2xl">
+                            <span data-lang="en">Reserve Your Ride</span><span data-lang="jp">乗車を予約する</span><span data-lang="es">Reserve su Viaje</span><span data-lang="zh">预订您的行程</span>
+                        </a>
+                        <a href="tel:8083048521" class="border border-white/50 text-white px-10 py-5 text-center font-bold uppercase tracking-widest text-sm hover:bg-gold hover:border-gold transition flex items-center justify-center">
+                            <i class="fa-solid fa-phone mr-2"></i>
+                            <span data-lang="en">Call Now</span><span data-lang="jp">今すぐ電話</span><span data-lang="es">Llamar Ahora</span><span data-lang="zh">立即拨打</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="fleet-card">
-                <div class="fleet-image">🚙</div>
-                <div class="fleet-info">
-                    <h3>Luxury SUV</h3>
-                    <div class="fleet-specs">👥 5-6 Passengers</div>
-                    <div class="fleet-specs">🧳 5-7 Bags</div>
-                    <div class="fleet-perfect">Perfect for: Families, groups, resort transfers</div>
-                </div>
-            </div>
-            <div class="fleet-card">
-                <div class="fleet-image">🚐</div>
-                <div class="fleet-info">
-                    <h3>Luxury Van</h3>
-                    <div class="fleet-specs">👥 10-14 Passengers</div>
-                    <div class="fleet-specs">🧳 10-14 Bags</div>
-                    <div class="fleet-perfect">Perfect for: Large families, corporate groups, events</div>
-                </div>
-            </div>
-            <div class="fleet-card">
-                <div class="fleet-image">🎩</div>
-                <div class="fleet-info">
-                    <h3>Stretch Limousine</h3>
-                    <div class="fleet-specs">👥 8-10 Passengers</div>
-                    <div class="fleet-specs">🧳 6-8 Bags</div>
-                    <div class="fleet-perfect">Perfect for: Weddings, proms, special celebrations</div>
-                </div>
-            </div>
-            <div class="fleet-card">
-                <div class="fleet-image">🚌</div>
-                <div class="fleet-info">
-                    <h3>Premium Sprinter</h3>
-                    <div class="fleet-specs">👥 12-14 Passengers</div>
-                    <div class="fleet-specs">🧳 12 Bags</div>
-                    <div class="fleet-perfect">Perfect for: Corporate events, group tours, airport transfers</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Why Choose Us -->
-    <section class="why-choose">
-        <h2 class="section-title">The Hawaii Tours 99 Difference</h2>
-        <div class="features-grid">
-            <div class="feature">
-                <h3>Professional Chauffeurs</h3>
-                <p>Licensed, insured, and trained in Hawaiian hospitality</p>
-            </div>
-            <div class="feature">
-                <h3>Immaculate Fleet</h3>
-                <p>Meticulously maintained luxury vehicles with premium amenities</p>
-            </div>
-            <div class="feature">
-                <h3>24/7 Availability</h3>
-                <p>Round-the-clock service for arrivals, departures, and emergencies</p>
-            </div>
-            <div class="feature">
-                <h3>Punctuality Guaranteed</h3>
-                <p>Real-time flight tracking and traffic monitoring</p>
-            </div>
-            <div class="feature">
-                <h3>Island Expertise</h3>
-                <p>Local knowledge for scenic routes and hidden gems</p>
-            </div>
-            <div class="feature">
-                <h3>All-Inclusive Pricing</h3>
-                <p>No hidden fees, transparent rates</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <h3>I just landed at the airport, where do I meet my chauffeur?</h3>
-                <p>Your driver will be waiting at the designated pre-arranged loading zone with your name displayed on a professional sign. Your confirmation email will include specific pickup instructions and your driver's contact information.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What if my flight gets canceled or delayed?</h3>
-                <p>We monitor all flights in real-time. If your flight is delayed, we automatically adjust your pickup time at no additional charge. If your flight is canceled, contact us immediately at (808) 304-8521, and we'll reschedule your service.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What is your cancellation policy?</h3>
-                <p>Cancellations 48+ hours in advance receive a full refund. Cancellations 24-48 hours in advance receive a 50% refund or full credit. Cancellations less than 24 hours receive no refund, though credits may be issued for emergencies.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Do you offer lei greetings?</h3>
-                <p>No, we do not offer lei greetings. However, we do offer orchid leis at $15 each.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="section-title">Contact Us</h2>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Get In Touch</h3>
-                <div class="contact-item">
-                    <div class="contact-icon">📞</div>
+        <!-- New Decorative / Word Section before Footer Area -->
+        <section class="py-24 px-4 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&q=80&w=1000" alt="Hawaii Scenery" class="rounded-2xl shadow-2xl relative z-10 w-full h-[500px] object-cover">
+                        <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-gold/10 -z-0 rounded-2xl hidden md:block"></div>
+                        <div class="absolute top-1/2 -left-12 -translate-y-1/2 bg-navy p-8 rounded-xl shadow-2xl z-20 hidden xl:block text-white max-w-xs">
+                            <p class="luxury-font text-2xl mb-2 text-gold">100%</p>
+                            <p class="text-xs font-bold uppercase tracking-widest opacity-80">
+                                <span data-lang="en">Guest Satisfaction Rate on Oʻahu</span>
+                                <span data-lang="jp">オアフ島での顧客満足度</span>
+                                <span data-lang="es">Tasa de satisfacción de huéspedes</span>
+                                <span data-lang="zh">欧胡岛客户满意度</span>
+                            </p>
+                        </div>
+                    </div>
                     <div>
-                        <strong>Phone</strong><br>
-                        <a href="tel:8083048521">(808) 304-8521</a><br>
-                        Available 24/7/365
+                        <span class="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">
+                            <span data-lang="en">Your Gateway to the Islands</span>
+                            <span data-lang="jp">島々への玄関口</span>
+                            <span data-lang="es">Su puerta de entrada</span>
+                            <span data-lang="zh">您的海岛之旅起点</span>
+                        </span>
+                        <h2 class="text-4xl md:text-5xl font-bold luxury-font text-navy mb-8 leading-tight">
+                            <span data-lang="en">Seamless Arrival, <br>Elegant Departure.</span>
+                            <span data-lang="jp">スムーズな到着、<br>エレガントな出発。</span>
+                            <span data-lang="es">Llegada sin problemas, <br>Salida elegante.</span>
+                            <span data-lang="zh">无缝衔接抵达，<br>优雅从容出发。</span>
+                        </h2>
+                        <div class="space-y-6 text-slate-600 leading-relaxed">
+                            <p>
+                                <span data-lang="en">From the moment you step off your plane at Daniel K. Inouye International Airport, our mission is to ensure your transition to paradise is effortless. Whether you are heading to the vibrant shores of Waikiki or the secluded luxury of Ko Olina, Hawaii Tours 99 LLC provides more than just a ride; we provide peace of mind.</span>
+                                <span data-lang="jp">ダニエル・K・イノウエ国際空港に降り立った瞬間から、パラダイスへの移動を快適にすることが私たちの使命です。ワイキキの活気ある海岸へ向かう際も、コオリナの静かな高級リゾートへ向かう際も、Hawaii Tours 99 LLCは単なる移動手段以上の「安心」を提供します。</span>
+                                <span data-lang="zh">从您踏下丹尼尔·井上国际机场飞机的瞬间起，我们的使命就是确保您能毫不费力地过渡到天堂般的假期。无论您是前往充满活力的威基基海滩，还是去往柯奥利纳的隐世奢华酒店，Hawaii Tours 99 LLC 提供的不仅仅是乘车服务，更是内心的安宁。</span>
+                            </p>
+                        </div>
+                        <div class="mt-10 grid grid-cols-2 gap-8 border-t border-slate-100 pt-10">
+                            <div>
+                                <h5 class="font-bold text-navy mb-2">
+                                    <span data-lang="en">Airport Concierge</span><span data-lang="jp">空港コンシェルジュ</span><span data-lang="zh">机场礼宾服务</span>
+                                </h5>
+                                <p class="text-xs text-slate-500 uppercase tracking-widest">HNL Meet & Greet</p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-navy mb-2">
+                                    <span data-lang="en">Islandwide Reach</span><span data-lang="jp">島内全域対応</span><span data-lang="zh">全岛范围覆盖</span>
+                                </h5>
+                                <p class="text-xs text-slate-500 uppercase tracking-widest">All Major Resorts</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div>
-                        <strong>Email</strong><br>
-                        <a href="mailto:hawaiitours99llc@gmail.com">hawaiitours99llc@gmail.com</a>
+
+                <!-- Visual Destination Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1598135753163-6167c1a1ad65?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Waikiki">
+                        <div class="absolute inset-0 location-overlay flex items-end p-4">
+                            <span class="text-white font-bold text-xs uppercase tracking-[0.2em]">Waikiki</span>
+                        </div>
                     </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">🏢</div>
-                    <div>
-                        <strong>Service Area</strong><br>
-                        Island of Oʻahu, Hawaii
+                    <div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1540611025311-01df3cef54b5?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="North Shore">
+                        <div class="absolute inset-0 location-overlay flex items-end p-4">
+                            <span class="text-white font-bold text-xs uppercase tracking-[0.2em]">North Shore</span>
+                        </div>
+                    </div>
+                    <div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Ko Olina">
+                        <div class="absolute inset-0 location-overlay flex items-end p-4">
+                            <span class="text-white font-bold text-xs uppercase tracking-[0.2em]">Ko Olina</span>
+                        </div>
+                    </div>
+                    <div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1516108317508-6788f6a160e6?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Diamond Head">
+                        <div class="absolute inset-0 location-overlay flex items-end p-4">
+                            <span class="text-white font-bold text-xs uppercase tracking-[0.2em]">Diamond Head</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="contact-form">
-                <h3>Book Your Luxury Experience</h3>
-                <form action="https://customer.moovs.app/hawaiiviptransport/new/info" method="get" target="_blank">
-                    <div class="form-group">
-                        <label>Name *</label>
-                        <input type="text" required>
+        </section>
+
+        <section class="py-20 px-4 bg-slate-50 border-t border-slate-100">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-3xl font-bold luxury-font text-navy mb-12">
+                    <span data-lang="en">Professional Oʻahu Chauffeurs</span>
+                    <span data-lang="jp">オアフ島のプロフェッショナル・ショファー</span>
+                    <span data-lang="es">Chóferes Profesionales en Oʻahu</span>
+                    <span data-lang="zh">欧胡岛专业私人司机</span>
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-white shadow-sm rounded-xl">
+                        <i class="fa-solid fa-shield-halved text-4xl text-gold mb-6"></i>
+                        <h4 class="font-bold mb-3">
+                            <span data-lang="en">Safe & Secure</span><span data-lang="jp">安心・安全</span><span data-lang="es">Seguro y Protegido</span><span data-lang="zh">安全可靠</span>
+                        </h4>
+                        <p class="text-slate-500 text-sm">
+                            <span data-lang="en">Fully licensed (PUC) and insured for your peace of mind.</span>
+                            <span data-lang="jp">PUCライセンス取得済み。保険完備で安心。</span>
+                            <span data-lang="es">Totalmente autorizado (PUC) y asegurado para su tranquilidad.</span>
+                            <span data-lang="zh">持有完整执照（PUC）并投保，让您无后顾之忧。</span>
+                        </p>
                     </div>
-                    <div class="form-group">
-                        <label>Email *</label>
-                        <input type="email" required>
+                    <div class="p-8 bg-white shadow-sm rounded-xl">
+                        <i class="fa-solid fa-star text-4xl text-gold mb-6"></i>
+                        <h4 class="font-bold mb-3">
+                            <span data-lang="en">VIP Treatment</span><span data-lang="jp">VIP待遇</span><span data-lang="es">Tratamiento VIP</span><span data-lang="zh">贵宾待遇</span>
+                        </h4>
+                        <p class="text-slate-500 text-sm">
+                            <span data-lang="en">Discreet, professional service tailored to your needs.</span>
+                            <span data-lang="jp">お客様のニーズに合わせた、控えめでプロフェッショナルなサービス。</span>
+                            <span data-lang="es">Servicio discreto y profesional adaptado a sus necesidades.</span>
+                            <span data-lang="zh">根据您的需求量身定制的专业服务，极具私密性。</span>
+                        </p>
                     </div>
-                    <div class="form-group">
-                        <label>Phone *</label>
-                        <input type="tel" required>
+                    <div class="p-8 bg-white shadow-sm rounded-xl">
+                        <i class="fa-solid fa-clock text-4xl text-gold mb-6"></i>
+                        <h4 class="font-bold mb-3">
+                            <span data-lang="en">Always Punctual</span><span data-lang="jp">時間厳守</span><span data-lang="es">Siempre Puntual</span><span data-lang="zh">准时到达</span>
+                        </h4>
+                        <p class="text-slate-500 text-sm">
+                            <span data-lang="en">Real-time flight tracking ensures we are always there on time.</span>
+                            <span data-lang="jp">リアルタイムのフライト追跡により、確実にお迎えに上がります。</span>
+                            <span data-lang="es">El seguimiento de vuelos en tiempo real garantiza puntualidad.</span>
+                            <span data-lang="zh">实时航班跟踪确保我们始终准时接机。</span>
+                        </p>
                     </div>
-                    <div class="form-group">
-                        <label>Service Type</label>
-                        <select>
-                            <option>Airport Transfer</option>
-                            <option>Hourly Charter</option>
-                            <option>Wedding</option>
-                            <option>Corporate</option>
-                            <option>Special Event</option>
-                        </select>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page: SERVICES -->
+    <div id="page-services" class="page-content bg-white pt-12">
+        <section class="py-24 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="text-gold uppercase tracking-[0.4em] text-xs font-bold block mb-4">
+                        <span data-lang="en">Our Solutions</span><span data-lang="jp">当社のサービス</span><span data-lang="es">Nuestras Soluciones</span><span data-lang="zh">我们的方案</span>
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-bold luxury-font text-navy">
+                        <span data-lang="en">World-Class Transportation</span><span data-lang="jp">世界クラスの送迎</span><span data-lang="es">Transporte de Clase Mundial</span><span data-lang="zh">世界一流的交通服务</span>
+                    </h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div class="service-card group">
+                        <div class="service-icon text-3xl text-gold mb-6"><i class="fa-solid fa-plane-arrival"></i></div>
+                        <h4 class="text-xl font-bold mb-3 uppercase tracking-tight">
+                            <span data-lang="en">Airport Transfers</span><span data-lang="jp">空港送迎</span><span data-lang="es">Traslados al Aeropuerto</span><span data-lang="zh">机场接送</span>
+                        </h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            <span data-lang="en">Meet & Greet service at HNL with professional flight tracking and luggage assistance.</span>
+                            <span data-lang="jp">HNLでのミート＆グリート、プロによるフライト追跡と手荷物アシスト。</span>
+                            <span data-lang="es">Servicio Meet & Greet en HNL con seguimiento de vuelos y ayuda con el equipaje.</span>
+                            <span data-lang="zh">檀香山机场 (HNL) 接机服务，提供专业航班跟踪及行李协助。</span>
+                        </p>
                     </div>
-                    <button type="submit" class="submit-btn">BOOK NOW</button>
+                    <div class="service-card group">
+                        <div class="service-icon text-3xl text-gold mb-6"><i class="fa-solid fa-briefcase"></i></div>
+                        <h4 class="text-xl font-bold mb-3 uppercase tracking-tight">
+                            <span data-lang="en">Corporate Travel</span><span data-lang="jp">法人利用</span><span data-lang="es">Viajes Corporativos</span><span data-lang="zh">商务旅行</span>
+                        </h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            <span data-lang="en">Reliable, punctual transportation for executives across Oʻahu.</span>
+                            <span data-lang="jp">オアフ島全域でのエグゼクティブ向け信頼ある時間厳守の送迎。</span>
+                            <span data-lang="es">Transporte confiable y puntual para ejecutivos en todo Oʻahu.</span>
+                            <span data-lang="zh">为欧胡岛各地的管理层提供可靠、准时的交通服务。</span>
+                        </p>
+                    </div>
+                    <div class="service-card group">
+                        <div class="service-icon text-3xl text-gold mb-6"><i class="fa-solid fa-camera"></i></div>
+                        <h4 class="text-xl font-bold mb-3 uppercase tracking-tight">
+                            <span data-lang="en">Private Tours</span><span data-lang="jp">プライベートツアー</span><span data-lang="es">Tours Privados</span><span data-lang="zh">私人定制导览</span>
+                        </h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            <span data-lang="en">Bespoke island tours tailored to your interests, from North Shore to Pearl Harbor.</span>
+                            <span data-lang="jp">ノースショアからパールハーバーまで、お客様に合わせた特注ツアー。</span>
+                            <span data-lang="es">Tours personalizados por la isla según sus intereses.</span>
+                            <span data-lang="zh">根据您的兴趣量身定制岛内导览，从北岸到珍珠港。</span>
+                        </p>
+                    </div>
+                    <div class="service-card group">
+                        <div class="service-icon text-3xl text-gold mb-6"><i class="fa-solid fa-ring"></i></div>
+                        <h4 class="text-xl font-bold mb-3 uppercase tracking-tight">
+                            <span data-lang="en">Special Events</span><span data-lang="jp">特別イベント</span><span data-lang="es">Eventos Especiales</span><span data-lang="zh">特别活动</span>
+                        </h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            <span data-lang="en">Weddings, galas, and celebrations. Arrive in style and comfort.</span>
+                            <span data-lang="jp">結婚式、ガラ、お祝い事。スタイリッシュで快適に。</span>
+                            <span data-lang="es">Bodas, galas y celebraciones. Llegue con estilo y comodidad.</span>
+                            <span data-lang="zh">婚礼、晚宴和庆典。让您优雅从容地抵达现场。</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page: FLEET -->
+    <div id="page-fleet" class="page-content bg-navy text-white pt-12 pb-24">
+        <section class="py-24 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 luxury-font text-gold">
+                        <span data-lang="en">Our Premium Selection</span>
+                        <span data-lang="jp">プレミアム・セレクション</span>
+                        <span data-lang="es">Nuestra Selección Premium</span>
+                        <span data-lang="zh">我们的豪华车队</span>
+                    </h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto italic">
+                        <span data-lang="en">Honolulu's most meticulously maintained luxury fleet.</span>
+                        <span data-lang="jp">ホノルルで最も入念に整備された高級車をご用意しております。</span>
+                        <span data-lang="es">La flota de lujo mejor mantenida de Honolulu.</span>
+                        <span data-lang="zh">檀香山维护最精良的豪华车队。</span>
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- FIRST CLASS SUV -->
+                    <div class="fleet-card rounded-xl overflow-hidden">
+                        <div class="h-64 bg-slate-800">
+                             <img src="https://images.unsplash.com/photo-1631243916213-92f704179e95?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-90" alt="SUV">
+                        </div>
+                        <div class="p-8">
+                            <h4 class="text-xl font-bold mb-2">
+                                <span data-lang="en">First Class SUV</span><span data-lang="jp">ファーストクラス SUV</span><span data-lang="es">SUV de Primera Clase</span><span data-lang="zh">头等舱级 SUV</span>
+                            </h4>
+                            <p class="text-gold text-xs font-bold uppercase tracking-widest mb-4">Escalade / Navigator</p>
+                            <div class="flex justify-between border-t border-white/10 pt-4 text-[10px] font-bold uppercase tracking-widest text-slate-300">
+                                <span><i class="fa-solid fa-users text-gold mr-2"></i> 6 <span data-lang="en">Pax</span><span data-lang="jp">名</span><span data-lang="es">Pasajeros</span><span data-lang="zh">乘客</span></span>
+                                <span><i class="fa-solid fa-suitcase text-gold mr-2"></i> 6 <span data-lang="en">Bags</span><span data-lang="jp">個</span><span data-lang="es">Maletas</span><span data-lang="zh">行李</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LUXURY SEDAN -->
+                    <div class="fleet-card rounded-xl overflow-hidden">
+                        <div class="h-64 bg-slate-800">
+                             <img src="https://images.unsplash.com/photo-1549416878-b9ca95e26903?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-90" alt="Sedan">
+                        </div>
+                        <div class="p-8">
+                            <h4 class="text-xl font-bold mb-2">
+                                <span data-lang="en">Executive Sedan</span><span data-lang="jp">エグゼクティブ・セダン</span><span data-lang="es">Sedán Ejecutivo</span><span data-lang="zh">行政豪华轿车</span>
+                            </h4>
+                            <p class="text-gold text-xs font-bold uppercase tracking-widest mb-4">S-Class / BMW 7</p>
+                            <div class="flex justify-between border-t border-white/10 pt-4 text-[10px] font-bold uppercase tracking-widest text-slate-300">
+                                <span><i class="fa-solid fa-users text-gold mr-2"></i> 3 <span data-lang="en">Pax</span><span data-lang="jp">名</span><span data-lang="es">Pasajeros</span><span data-lang="zh">乘客</span></span>
+                                <span><i class="fa-solid fa-suitcase text-gold mr-2"></i> 3 <span data-lang="en">Bags</span><span data-lang="jp">個</span><span data-lang="es">Maletas</span><span data-lang="zh">行李</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STRETCH LIMO -->
+                    <div class="fleet-card rounded-xl overflow-hidden">
+                        <div class="h-64 bg-slate-800">
+                             <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-90" alt="Limo">
+                        </div>
+                        <div class="p-8">
+                            <h4 class="text-xl font-bold mb-2">
+                                <span data-lang="en">Stretch Limousine</span><span data-lang="jp">ストレッチ・リムジン</span><span data-lang="es">Limusina</span><span data-lang="zh">加长豪华礼车</span>
+                            </h4>
+                            <p class="text-gold text-xs font-bold uppercase tracking-widest mb-4">Lincoln Stretch</p>
+                            <div class="flex justify-between border-t border-white/10 pt-4 text-[10px] font-bold uppercase tracking-widest text-slate-300">
+                                <span><i class="fa-solid fa-users text-gold mr-2"></i> 10 <span data-lang="en">Pax</span><span data-lang="jp">名</span><span data-lang="es">Pasajeros</span><span data-lang="zh">乘客</span></span>
+                                <span><i class="fa-solid fa-glass-cheers text-gold mr-2"></i> <span data-lang="en">VIP</span><span data-lang="jp">VIP</span><span data-lang="es">VIP</span><span data-lang="zh">顶级VIP</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EXECUTIVE VAN -->
+                    <div class="fleet-card rounded-xl overflow-hidden">
+                        <div class="h-64 bg-slate-800">
+                             <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5241?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-90" alt="Van">
+                        </div>
+                        <div class="p-8">
+                            <h4 class="text-xl font-bold mb-2">
+                                <span data-lang="en">Executive Sprinter</span><span data-lang="jp">エグゼクティブ・スプリンター</span><span data-lang="es">Sprinter Ejecutivo</span><span data-lang="zh">行政客运商务车</span>
+                            </h4>
+                            <p class="text-gold text-xs font-bold uppercase tracking-widest mb-4">Mercedes Sprinter</p>
+                            <div class="flex justify-between border-t border-white/10 pt-4 text-[10px] font-bold uppercase tracking-widest text-slate-300">
+                                <span><i class="fa-solid fa-users text-gold mr-2"></i> 14 <span data-lang="en">Pax</span><span data-lang="jp">名</span><span data-lang="es">Pasajeros</span><span data-lang="zh">乘客</span></span>
+                                <span><i class="fa-solid fa-suitcase text-gold mr-2"></i> <span data-lang="en">Cargo</span><span data-lang="jp">積載量大</span><span data-lang="es">Carga</span><span data-lang="zh">大空间</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page: TERMS -->
+    <div id="page-terms" class="page-content bg-slate-50 pt-12 pb-24">
+        <section class="py-20 px-4">
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-xl rounded-2xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold luxury-font text-navy mb-4">
+                        <span data-lang="en">Terms & Conditions</span><span data-lang="jp">利用規約とプライバシー</span><span data-lang="es">Términos y Condiciones</span><span data-lang="zh">条款与条件</span>
+                    </h2>
+                    <div class="h-1 w-20 bg-gold mx-auto"></div>
+                </div>
+                <div class="legal-text text-sm">
+                    <div data-lang="en">
+                        <h3>Terms of Use</h3>
+                        <p>These "Terms of Use" set forth the terms and conditions that apply to your use of this web site. By using the web site, you agree to comply with all of the Terms of Use set forth herein.</p>
+                        <h3>Privacy Policy</h3>
+                        <p>Hawaii Tours 99 LLC respects your privacy. Any personal information you provide us including your name, address, telephone number, and e-mail address will not be released to any entities outside of Hawaii Tours 99 LLC.</p>
+                        <h3>Cancellation Policy</h3>
+                        <p>Cancellations must be made at least 24 hours prior to the day of service for a full refund. Cancellations made less than 24 hours prior will result in a 100% charge.</p>
+                    </div>
+                    <div data-lang="jp">
+                        <h3>利用規約</h3>
+                        <p>この「利用規約」は、本ウェブサイトの利用に適用される条件を定めたものです。ウェブサイトを利用することで、ここに記載されたすべての利用規約に従うことに同意したものとみなされます。</p>
+                        <h3>プライバシーポリシー</h3>
+                        <p>Hawaii Tours 99 LLCはお客様のプライバシーを尊重します。氏名、住所、電話番号、メールアドレスなどの個人情報は、当社以外の第三者に開示されることはありません。</p>
+                        <h3>キャンセルポリシー</h3>
+                        <p>全額返金には、サービス提供日の24時間前までのキャンセルが必要です。24時間以内のキャンセルは、料金の100%を申し受けます。</p>
+                    </div>
+                    <div data-lang="es">
+                        <h3>Términos de Uso</h3>
+                        <p>Estos "Términos de uso" establecerlos términos y condiciones que se aplican al uso de este sitio web. Al utilizar el sitio web, usted acepta cumplir con todos los Términos de uso establecidos en este documento.</p>
+                        <h3>Política de Privacidad</h3>
+                        <p>Hawaii Tours 99 LLC respeta su privacidad. Cualquier información personal que nos proporcione no será revelada a ninguna entidad ajena a la empresa.</p>
+                        <h3>Política de Cancelación</h3>
+                        <p>Las cancelaciones deben realizarse al menos 24 horas antes del día del servicio para obtener un reembolso completo. Las cancelaciones realizadas con menos de 24 horas darán lugar a un cargo del 100%.</p>
+                    </div>
+                    <div data-lang="zh">
+                        <h3>使用条款</h3>
+                        <p>本“使用条款”规定了适用于您使用本网站的条款 and 条件。通过使用本网站，您同意遵守本文所述的所有使用条款。</p>
+                        <h3>隐私政策</h3>
+                        <p>Hawaii Tours 99 LLC 尊重您的隐私。您提供给我们的任何个人信息（包括姓名、地址、电话号码和电子邮件地址）都不会透露给公司以外的任何实体。</p>
+                        <h3>取消政策</h3>
+                        <p>取消预订必须在服务当天前至少 24 小时进行，方可获得全额退款。在 24 小时内取消将导致 100% 的费用扣除。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page: CONTACT -->
+    <div id="page-contact" class="page-content bg-white pt-12 pb-24">
+        <section class="py-20 px-4">
+            <div class="max-w-7xl mx-auto text-center mb-16">
+                <h2 class="text-5xl font-bold luxury-font text-navy mb-4">
+                    <span data-lang="en">Contact Us</span><span data-lang="jp">お問い合わせ</span><span data-lang="es">Contacto</span><span data-lang="zh">联系我们</span>
+                </h2>
+                <p class="text-gold font-semibold uppercase tracking-widest text-sm">
+                    <span data-lang="en">Get In Touch</span><span data-lang="jp">お気軽にご連絡ください</span><span data-lang="es">Póngase en contacto</span><span data-lang="zh">欢迎垂询</span>
+                </p>
+                <div class="h-1 w-20 bg-gold mx-auto mt-6"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-slate-50 p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100">
+                <h3 class="text-2xl font-bold luxury-font text-navy mb-8 text-center md:text-left">
+                    <span data-lang="en">Book Your Luxury Experience</span><span data-lang="jp">豪華な体験を予約する</span><span data-lang="es">Reserve su Experiencia de Lujo</span><span data-lang="zh">预订您的豪华体验</span>
+                </h3>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mb-10 text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gold/10 rounded-full mb-4">
+                        <i class="fa-solid fa-phone text-2xl text-gold"></i>
+                    </div>
+                    <p class="text-navy font-bold text-lg mb-2">
+                        <span data-lang="en">Call Our Concierge</span><span data-lang="jp">コンシェルジュに電話する</span><span data-lang="es">Llame a Nuestro Conserje</span><span data-lang="zh">致电我们的礼宾部</span>
+                    </p>
+                    <a href="tel:8083048521" class="text-3xl font-bold text-gold hover:text-navy transition block mb-6 tracking-wider">
+                        (808) 304-8521
+                    </a>
+                    <a href="tel:8083048521" class="inline-block bg-gold text-white font-bold px-12 py-5 rounded-xl hover:bg-navy transition shadow-lg uppercase tracking-widest text-sm">
+                        <span data-lang="en">Call Now</span><span data-lang="jp">今すぐ電話</span><span data-lang="es">Llamar Ahora</span><span data-lang="zh">立即拨打</span>
+                    </a>
+                </div>
+
+                <div class="relative py-8 flex items-center">
+                    <div class="flex-grow border-t border-slate-200"></div>
+                    <span class="flex-shrink mx-4 text-slate-400 text-xs font-bold uppercase tracking-widest">
+                        <span data-lang="en">Or Email Us</span><span data-lang="jp">またはメールで</span><span data-lang="es">O Envíenos un Correo</span><span data-lang="zh">或通过邮件联系</span>
+                    </span>
+                    <div class="flex-grow border-t border-slate-200"></div>
+                </div>
+
+                <form class="grid md:grid-cols-2 gap-6 text-left">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
+                             <span data-lang="en">Name</span><span data-lang="jp">氏名</span><span data-lang="es">Nombre</span><span data-lang="zh">姓名</span> *
+                        </label>
+                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-gold transition" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
+                             <span data-lang="en">Email</span><span data-lang="jp">メール</span><span data-lang="es">Correo</span><span data-lang="zh">邮箱</span> *
+                        </label>
+                        <input type="email" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-gold transition" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="w-full bg-navy text-white font-bold py-5 rounded-lg hover:bg-gold transition shadow-lg uppercase tracking-widest text-sm">
+                             <span data-lang="en">Send Message</span><span data-lang="jp">メッセージを送信</span><span data-lang="es">Enviar Mensaje</span><span data-lang="zh">发送信息</span>
+                        </button>
+                    </div>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#fleet">Our Fleet</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
+    <footer class="bg-white border-t border-slate-200 pt-20 pb-10 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-navy">
+            <div class="lg:col-span-2">
+                <img src="5bc57dc2-9873-40b7-a0ec-ed431b7773a9.jpg" 
+                     alt="Hawaii Tours 99 LLC Logo" 
+                     class="h-12 w-auto object-contain mb-4 grayscale opacity-80 hover:grayscale-0 transition"
+                     onerror="this.style.display='none';">
+                <p class="text-slate-500 text-sm max-w-sm">
+                    <span data-lang="en">Providing Honolulu's most refined transportation solutions for over a decade.</span>
+                    <span data-lang="jp">10年以上にわたり、ホノルルで最も洗練された送迎ソリューションを提供しています。</span>
+                    <span data-lang="es">Ofreciendo las soluciones de transporte más refinadas de Honolulu durante más de una década.</span>
+                    <span data-lang="zh">十多年来一直致力于提供檀香山最精密的交通解决方案。</span>
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6">
+                    <span data-lang="en">Quick Links</span><span data-lang="jp">クイックリンク</span><span data-lang="es">Enlaces Rápidos</span><span data-lang="zh">快速链接</span>
+                </h4>
+                <ul class="space-y-4 text-sm font-semibold">
+                    <li><a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-gold transition">
+                        <span data-lang="en">Home</span><span data-lang="jp">ホーム</span><span data-lang="es">Inicio</span><span data-lang="zh">首页</span>
+                    </a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('fleet')" class="hover:text-gold transition">
+                        <span data-lang="en">Fleet</span><span data-lang="jp">車両紹介</span><span data-lang="es">Flota</span><span data-lang="zh">车队展示</span>
+                    </a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('terms')" class="hover:text-gold transition">
+                        <span data-lang="en">Terms</span><span data-lang="jp">規約</span><span data-lang="es">Términos</span><span data-lang="zh">条款</span>
+                    </a></li>
                 </ul>
             </div>
-            <div class="footer-column">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="#services">Airport Transfers</a></li>
-                    <li><a href="#services">Hourly Charter</a></li>
-                    <li><a href="#services">Corporate Transportation</a></li>
-                    <li><a href="#services">Wedding Services</a></li>
-                    <li><a href="#services">Group Events</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contact</h4>
-                <p>Hawaii Tours 99 LLC<br>
-                📞 (808) 304-8521<br>
-                📧 hawaiitours99llc@gmail.com<br>
-                🕒 Available 24/7/365<br>
-                Island of Oʻahu, Hawaii</p>
-            </div>
-            <div class="footer-column">
-                <h4>Stay Connected</h4>
-                <p>Follow our journey and see the latest from paradise</p>
-                <div style="margin-top: 1rem;">
-                    <a href="https://customer.moovs.app/hawaiiviptransport/new/info" class="btn-primary" target="_blank" style="display: inline-block; padding: 0.8rem 1.5rem;">BOOK NOW</a>
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6">
+                    <span data-lang="en">Contact</span><span data-lang="jp">連絡先</span><span data-lang="es">Contacto</span><span data-lang="zh">联系方式</span>
+                </h4>
+                <div class="space-y-4 text-sm">
+                    <p><a href="tel:8083048521" class="hover:text-gold transition"><i class="fa-solid fa-phone text-gold mr-3"></i> (808) 304-8521</a></p>
+                    <p><i class="fa-solid fa-envelope text-gold mr-3"></i> hawaiitours99llc@gmail.com</p>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 Hawaii Tours 99 LLC. All Rights Reserved.</p>
-            <p>Licensed & Insured | Hawaiian Tourism Approved | Professional Chauffeur Services</p>
+        <div class="max-w-7xl mx-auto border-t border-slate-100 pt-8 text-[10px] uppercase tracking-widest text-slate-400">
+            <p>&copy; 2024 Hawaii Tours 99 LLC. <span data-lang="en">Licensed & Insured.</span><span data-lang="jp">ライセンス取得済・保険加入済</span><span data-lang="es">Autorizado y Asegurado.</span><span data-lang="zh">执照齐全，已投保。</span></p>
         </div>
     </footer>
+
+    <script>
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active-page'));
+            
+            const target = document.getElementById('page-' + pageId);
+            if(target) {
+                target.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+            
+            const navLink = document.getElementById('nav-' + pageId);
+            if(navLink) navLink.classList.add('active-page');
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function setLanguage(lang) {
+            document.body.classList.remove('lang-en', 'lang-jp', 'lang-es', 'lang-zh');
+            document.body.classList.add('lang-' + lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const btn = document.getElementById('btn-' + lang);
+            if (btn) btn.classList.add('active');
+            localStorage.setItem('hi99_lang', lang);
+        }
+
+        window.onload = () => {
+            const saved = localStorage.getItem('hi99_lang') || 'en';
+            setLanguage(saved);
+            navigateTo('home');
+        };
+    </script>
 </body>
 </html>
