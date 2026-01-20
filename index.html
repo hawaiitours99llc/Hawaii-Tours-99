@@ -158,7 +158,7 @@
                 <a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-gold transition nav-link" id="nav-contact">
                     <span data-lang="en">Contact</span><span data-lang="jp">お問い合わせ</span><span data-lang="es">Contacto</span><span data-lang="zh">联系我们</span>
                 </a>
-                <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-white px-8 py-3 rounded hover:bg-navy transition shadow-lg ml-4">
+                <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-white px-8 py-3 rounded hover:bg-navy transition shadow-lg ml-4">
                     <span data-lang="en">Book Now</span><span data-lang="jp">今すぐ予約</span><span data-lang="es">Reservar</span><span data-lang="zh">立即预订</span>
                 </a>
             </div>
@@ -219,7 +219,7 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-white px-10 py-5 text-center font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-navy transition shadow-2xl">
+                        <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-white px-10 py-5 text-center font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-navy transition shadow-2xl">
                             <span data-lang="en">Reserve Your Ride</span><span data-lang="jp">乗車を予約する</span><span data-lang="es">Reserve su Viaje</span><span data-lang="zh">预订您的行程</span>
                         </a>
                         <a href="tel:8083048521" class="border border-white/50 text-white px-10 py-5 text-center font-bold uppercase tracking-widest text-sm hover:bg-gold hover:border-gold transition flex items-center justify-center">
@@ -466,7 +466,7 @@
                                     <span class="inline-flex items-center mr-4"><i class="fa-solid fa-users text-gold mr-2"></i>5 Pax</span>
                                     <span class="inline-flex items-center"><i class="fa-solid fa-suitcase text-gold mr-2"></i>4 Bags</span>
                                 </div>
-                                <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
+                                <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
                             </div>
                         </div>
                     </article>
@@ -484,7 +484,7 @@
                                     <span class="inline-flex items-center mr-4"><i class="fa-solid fa-users text-gold mr-2"></i>2 Pax</span>
                                     <span class="inline-flex items-center"><i class="fa-solid fa-suitcase text-gold mr-2"></i>2 Bags</span>
                                 </div>
-                                <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
+                                <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
                             </div>
                         </div>
                     </article>
@@ -502,7 +502,7 @@
                                     <span class="inline-flex items-center mr-4"><i class="fa-solid fa-users text-gold mr-2"></i>5 Pax</span>
                                     <span class="inline-flex items-center"><i class="fa-solid fa-glass-cheers text-gold mr-2"></i>VIP</span>
                                 </div>
-                                <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
+                                <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
                             </div>
                         </div>
                     </article>
@@ -520,7 +520,7 @@
                                     <span class="inline-flex items-center mr-4"><i class="fa-solid fa-users text-gold mr-2"></i>14 Pax</span>
                                     <span class="inline-flex items-center"><i class="fa-solid fa-suitcase text-gold mr-2"></i>Cargo</span>
                                 </div>
-                                <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
+                                <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
                             </div>
                         </div>
                     </article>
@@ -621,6 +621,32 @@
     </div>
 
     <!-- Page: TERMS -->
+    <!-- Page: BOOKING (internal iframe) -->
+    <div id="page-booking" class="page-content bg-white pt-12 pb-24">
+        <section class="py-20 px-4">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl font-bold luxury-font text-navy mb-4">
+                    <span data-lang="en">Book Your Ride</span><span data-lang="jp">予約</span><span data-lang="es">Reservar</span><span data-lang="zh">预订</span>
+                </h2>
+                <p class="text-slate-500 mb-6">
+                    <span data-lang="en">We load the booking flow here for a seamless on-site experience. If the booking page prevents framing, use the button below to open it in a new tab.</span>
+                    <span data-lang="jp">ここで予約フローを読み込みます。フレームを許可しない場合は、下のボタンで新しいタブを開いてください。</span>
+                    <span data-lang="es">Cargamos el flujo de reservas aquí. Si la página no permite iframe, utilice el botón para abrir en una nueva pestaña.</span>
+                    <span data-lang="zh">我们在此加载预订流程。如目标页面不允许嵌入，请使用下方按钮在新标签页打开。</span>
+                </p>
+
+                <div class="w-full h-[700px] bg-slate-100 rounded-xl overflow-hidden mb-4">
+                    <iframe id="booking-iframe" src="https://customer.moovs.app/hawaiiviptransport/new/info" class="w-full h-full" frameborder="0" sandbox="allow-same-origin allow-scripts allow-forms allow-popups"></iframe>
+                </div>
+
+                <div class="flex items-center justify-center gap-4">
+                    <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-navy px-6 py-3 rounded font-bold uppercase tracking-widest">Open Booking in New Tab</a>
+                    <button onclick="navigateTo('home')" class="px-6 py-3 rounded border border-slate-200">Return Home</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <div id="page-terms" class="page-content bg-slate-50 pt-12 pb-24">
         <section class="py-20 px-4">
             <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-xl rounded-2xl">
