@@ -149,6 +149,9 @@
                 <a href="javascript:void(0)" onclick="navigateTo('reviews')" class="hover:text-gold transition nav-link" id="nav-reviews">
                     <span data-lang="en">Reviews</span><span data-lang="jp">レビュー</span><span data-lang="es">Reseñas</span><span data-lang="zh">评论</span>
                 </a>
+                <a href="javascript:void(0)" onclick="navigateTo('gallery')" class="hover:text-gold transition nav-link" id="nav-gallery">
+                    <span data-lang="en">Gallery</span><span data-lang="jp">ギャラリー</span><span data-lang="es">Galería</span><span data-lang="zh">相册</span>
+                </a>
                 <a href="javascript:void(0)" onclick="navigateTo('terms')" class="hover:text-gold transition nav-link" id="nav-terms">
                     <span data-lang="en">Terms</span><span data-lang="jp">規約</span><span data-lang="es">Términos</span><span data-lang="zh">条款</span>
                 </a>
@@ -185,6 +188,10 @@
               <hr>
               <a href="javascript:void(0)" onclick="navigateTo('reviews')" class="block py-2">
                   <span data-lang="en">Reviews</span><span data-lang="jp">レビュー</span><span data-lang="es">Reseñas</span><span data-lang="zh">评论</span>
+              </a>
+              <hr>
+              <a href="javascript:void(0)" onclick="navigateTo('gallery')" class="block py-2">
+                   <span data-lang="en">Gallery</span><span data-lang="jp">ギャラリー</span><span data-lang="es">Galería</span><span data-lang="zh">相册</span>
               </a>
         </div>
     </nav>
@@ -521,6 +528,46 @@
             </div>
         </section>
     </div>
+    <!-- Page: GALLERY -->
+    <div id="page-gallery" class="page-content bg-white pt-12 pb-24">
+        <section class="py-20 px-4">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl font-bold luxury-font text-navy mb-4">
+                    <span data-lang="en">Gallery</span><span data-lang="jp">ギャラリー</span><span data-lang="es">Galería</span><span data-lang="zh">相册</span>
+                </h2>
+                <p class="text-slate-500 mb-8">
+                    <span data-lang="en">A selection of photos from our services and destinations. Add your images to the Photos/ folder and include them below.</span>
+                    <span data-lang="jp">サービスと目的地の写真を掲載しています。Photos/フォルダに画像を追加して、下のグリッドに挿入してください。</span>
+                    <span data-lang="es">Una selección de fotos de nuestros servicios y destinos. Agregue sus imágenes a la carpeta Photos/ y colóquelas abajo.</span>
+                    <span data-lang="zh">展示我们的服务与目的地照片。将图片放入 Photos/ 文件夹并在下方添加。</span>
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="Photos/A9.jpg" target="_blank" class="block overflow-hidden rounded-lg">
+                        <img src="Photos/A9.jpg" alt="Gallery 1" class="w-full h-48 object-cover">
+                    </a>
+                    <a href="Photos/1.jpg" target="_blank" class="block overflow-hidden rounded-lg">
+                        <img src="Photos/1.jpg" alt="Gallery 2" class="w-full h-48 object-cover">
+                    </a>
+                    <a href="Photos/2.jpg" target="_blank" class="block overflow-hidden rounded-lg">
+                        <img src="Photos/2.jpg" alt="Gallery 3" class="w-full h-48 object-cover">
+                    </a>
+                    <a href="Photos/3.jpg" target="_blank" class="block overflow-hidden rounded-lg">
+                        <img src="Photos/3.jpg" alt="Gallery 4" class="w-full h-48 object-cover">
+                    </a>
+                    <a href="Photos/4.jpg" target="_blank" class="block overflow-hidden rounded-lg">
+                        <img src="Photos/4.jpg" alt="Gallery 5" class="w-full h-48 object-cover">
+                    </a>
+                    <a href="Photos/5.jpg" target="_blank" class="block overflow-hidden rounded-lg">
+                        <img src="Photos/5.jpg" alt="Gallery 6" class="w-full h-48 object-cover">
+                    </a>
+                </div>
+
+                <p class="text-xs text-slate-400 mt-6">To add photos: place image files in the Photos/ folder and add or update the <code>&lt;img&gt;</code> tags inside this grid.</p>
+            </div>
+        </section>
+    </div>
+
     <!-- Page: REVIEWS -->
     <div id="page-reviews" class="page-content bg-white pt-12 pb-24">
         <section class="py-20 px-4">
