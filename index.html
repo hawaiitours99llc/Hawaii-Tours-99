@@ -81,6 +81,13 @@
         .location-overlay {
             background: linear-gradient(to top, rgba(10, 25, 47, 0.9), transparent);
         }
+        /* Reviews styling */
+        .review-card { transition: transform .25s ease, box-shadow .25s ease; }
+        .review-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(2,6,23,0.12); }
+        .review-text { overflow: hidden; }
+        .review-text.collapsed { max-height: 4.5rem; position: relative; }
+        .review-text.collapsed:after { content: ''; position: absolute; left:0; right:0; bottom:0; height:1.5rem; background: linear-gradient(transparent, rgba(255,255,255,0.95)); }
+        .read-more { background:none; border:none; color:var(--navy); font-weight:700; cursor:pointer; }
     </style>
 </head>
 <body class="bg-white text-slate-900 lang-en">
@@ -732,36 +739,137 @@
                     <span data-lang="zh">客户评价 — 选择 Hawaii Tours 99 的旅客真实反馈。</span>
                 </p>
 
-                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div id="reviews-list" class="grid md:grid-cols-3 gap-6 mb-12">
                     <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
                         <div class="flex items-center mb-3">
                             <div class="text-gold text-xl mr-3">★★★★★</div>
                             <div>
-                                <div class="font-bold text-navy">Alex P.</div>
-                                <div class="text-xs text-slate-400">Honolulu, HI</div>
+                                <div class="font-bold text-navy">Patricia M.</div>
+                                <div class="text-xs text-slate-400">Aug 2024</div>
                             </div>
                         </div>
-                        <p class="text-sm text-slate-600">"Impeccable service from pickup to drop-off. Driver was professional and friendly. Highly recommend."</p>
+                        <p class="text-sm text-slate-600">The driver Michael was kind, polite, classy and prompt. The vehicle and service was first class!</p>
                     </div>
+
                     <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
                         <div class="flex items-center mb-3">
                             <div class="text-gold text-xl mr-3">★★★★★</div>
                             <div>
-                                <div class="font-bold text-navy">Maria S.</div>
-                                <div class="text-xs text-slate-400">Tokyo, JP</div>
+                                <div class="font-bold text-navy">Nelson M.</div>
+                                <div class="text-xs text-slate-400">Aug 2024</div>
                             </div>
                         </div>
-                        <p class="text-sm text-slate-600">"日本語でも丁寧に対応してくれました。車内も清潔で快適でした。"</p>
+                        <p class="text-sm text-slate-600">Pleasant and amicable driver, Michael, was very helpful and informative. Would definitely recommend.</p>
                     </div>
+
                     <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
                         <div class="flex items-center mb-3">
                             <div class="text-gold text-xl mr-3">★★★★★</div>
                             <div>
-                                <div class="font-bold text-navy">Carlos R.</div>
-                                <div class="text-xs text-slate-400">Los Angeles, CA</div>
+                                <div class="font-bold text-navy">Leslie W.</div>
+                                <div class="text-xs text-slate-400">Jul 2024</div>
                             </div>
                         </div>
-                        <p class="text-sm text-slate-600">"Great communication and punctual pickup. Perfect for our wedding guests."</p>
+                        <p class="text-sm text-slate-600">Our driver, Paul, was professional, friendly, and accommodating. Pick up couldn’t have been easier. The car was clean and comfortable.</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold text-xl mr-3">★★★★★</div>
+                            <div>
+                                <div class="font-bold text-navy">Betty L.</div>
+                                <div class="text-xs text-slate-400">Apr 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600">This is the best transportation experience I ever had in Hawaii. The driver is very friendly, punctual, and professional.</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold text-xl mr-3">★★★★★</div>
+                            <div>
+                                <div class="font-bold text-navy">Ty J.</div>
+                                <div class="text-xs text-slate-400">Apr 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600">Best experience, best communication, on time. I highly recommend this to anyone seeking an unforgettable trip.</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold text-xl mr-3">★★★★★</div>
+                            <div>
+                                <div class="font-bold text-navy">SokChhay E.</div>
+                                <div class="text-xs text-slate-400">Apr 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600">I had a good experience. Luxury car and very nice driver — friendly service. I would recommend them.</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold text-xl mr-3">★★★★★</div>
+                            <div>
+                                <div class="font-bold text-navy">Ronald A.</div>
+                                <div class="text-xs text-slate-400">Mar 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600">The drivers were very friendly and professional. Vehicles were exceptionally clean and on time. Overall, great service.</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold text-xl mr-3">★★★★★</div>
+                            <div>
+                                <div class="font-bold text-navy">Laurence L.</div>
+                                <div class="text-xs text-slate-400">Mar 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600">Was interactive and super friendly! Very clean, and got us to our destination safely and quickly. 10/10 recommend!</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold text-xl mr-3">★★★★★</div>
+                            <div>
+                                <div class="font-bold text-navy">Istorico I.</div>
+                                <div class="text-xs text-slate-400">Jan 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600">Everything about our experience was great. Instructions were prompt, clear and easy to follow.</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold text-xl mr-3">★★★★★</div>
+                            <div>
+                                <div class="font-bold text-navy">Remi M.</div>
+                                <div class="text-xs text-slate-400">Jan 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600">Michael was super friendly. He communicated in advance via text and arrived early. Great vehicle!</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold text-xl mr-3">★★★★★</div>
+                            <div>
+                                <div class="font-bold text-navy">Judith L.</div>
+                                <div class="text-xs text-slate-400">Jan 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600">Great communication from Michael prior to our arrival. A very timely airport pick up and comfortable ride to our hotel.</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold text-xl mr-3">★★★★★</div>
+                            <div>
+                                <div class="font-bold text-navy">Gregory G.</div>
+                                <div class="text-xs text-slate-400">Jan 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600">We cannot give Michael enough stars! Everything he did was professional and punctual. Thank you, Michael.</p>
                     </div>
                 </div>
 
@@ -865,6 +973,17 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Admin: Paste reviews (visible when URL hash is #admin) -->
+                <div id="reviews-admin" class="max-w-3xl mx-auto mt-8 p-6 bg-white border rounded-lg shadow" style="display:none;">
+                    <h4 class="font-bold text-navy mb-2">Admin: Import Reviews</h4>
+                    <p class="text-xs text-slate-500 mb-3">Paste a JSON array of reviews or plain lines. JSON format: [{"author":"Name","location":"City","text":"Review text"}, ...]</p>
+                    <textarea id="reviews-import" rows="6" class="w-full p-3 border rounded mb-3" placeholder='Paste JSON or lines like "Name | Location | Review text"'></textarea>
+                    <div class="flex gap-3">
+                        <button onclick="applyImportedReviews()" class="bg-gold text-navy px-4 py-2 rounded font-bold">Import</button>
+                        <button onclick="document.location.hash=''; toggleAdmin(false)" class="px-4 py-2 rounded border">Close Admin</button>
+                    </div>
+                </div>
                 <div class="bg-white p-8 rounded-xl shadow-lg">
                     <h4 class="font-bold text-navy mb-6 uppercase tracking-widest text-sm">Send a Message</h4>
                     <form class="space-y-4">
@@ -958,6 +1077,77 @@
             setLanguage(saved);
             navigateTo('home');
         };
+
+        // Admin import utilities for reviews
+        function toggleAdmin(show) {
+            const el = document.getElementById('reviews-admin');
+            if (!el) return;
+            el.style.display = show ? 'block' : 'none';
+        }
+
+        // If URL contains #admin, show admin import UI
+        if (window.location.hash === '#admin') {
+            toggleAdmin(true);
+        }
+
+        function applyImportedReviews() {
+            const raw = document.getElementById('reviews-import').value.trim();
+            if (!raw) return alert('Paste reviews JSON or text first.');
+
+            let items = [];
+            // Try JSON
+            try {
+                const j = JSON.parse(raw);
+                if (Array.isArray(j)) {
+                    items = j.map(r => ({ author: r.author || 'Guest', location: r.location || '', text: r.text || r.review || '' }));
+                }
+            } catch (e) {
+                // Not JSON — parse plain lines
+                const lines = raw.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+                lines.forEach(l => {
+                    // Try split by | or tab
+                    let parts = l.split('|');
+                    if (parts.length < 3) parts = l.split('\t');
+                    if (parts.length >= 3) {
+                        items.push({ author: parts[0].trim(), location: parts[1].trim(), text: parts.slice(2).join('|').trim() });
+                    } else {
+                        // Fallback: Author — Text
+                        const m = l.match(/^([^:\-\|]+)[\:\-]{1,2}\s*(.+)$/);
+                        if (m) items.push({ author: m[1].trim(), location: '', text: m[2].trim() });
+                        else items.push({ author: 'Guest', location: '', text: l });
+                    }
+                });
+            }
+
+            if (!items.length) return alert('No reviews found in input.');
+
+            // Render up to 12 reviews, only keep non-empty text
+            const filtered = items.filter(i => i.text && i.text.length > 10).slice(0, 12);
+            const container = document.getElementById('reviews-list');
+            if (!container) return alert('Reviews container not found.');
+
+            container.innerHTML = filtered.map(r => `
+                <div class="p-6 bg-slate-50 rounded-xl shadow-sm text-left">
+                    <div class="flex items-center mb-3">
+                        <div class="text-gold text-xl mr-3">★★★★★</div>
+                        <div>
+                            <div class="font-bold text-navy">${escapeHtml(r.author)}</div>
+                            <div class="text-xs text-slate-400">${escapeHtml(r.location)}</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600">${escapeHtml(r.text)}</p>
+                </div>
+            `).join('');
+
+            // Hide admin after import
+            toggleAdmin(false);
+            document.getElementById('reviews-import').value = '';
+            navigateTo('reviews');
+        }
+
+        function escapeHtml(str){
+            return String(str).replace(/[&<>"']/g, function(m){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"})[m]; });
+        }
     </script>
 </body>
 </html>
