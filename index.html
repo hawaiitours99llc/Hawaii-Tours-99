@@ -1044,20 +1044,33 @@
     </footer>
 
     <script>
-        function navigateTo(pageId) {
+        function navigateTo(pageId, updateHash = true) {
             document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active-page'));
-            
+
             const target = document.getElementById('page-' + pageId);
-            if(target) {
+            if (target) {
                 target.classList.add('active');
                 window.scrollTo(0, 0);
             }
-            
+
             const navLink = document.getElementById('nav-' + pageId);
-            if(navLink) navLink.classList.add('active-page');
-            document.getElementById('mobile-menu').classList.add('hidden');
+            if (navLink) navLink.classList.add('active-page');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) mobileMenu.classList.add('hidden');
+
+            if (updateHash) {
+                const hash = pageId === 'home' ? '' : '#' + pageId;
+                if (location.hash !== hash) location.hash = hash;
+            }
         }
+
+        // Keep URL in sync using hash; respond to hash changes (back/forward)
+        window.addEventListener('hashchange', function() {
+            const raw = (location.hash || '').replace(/^#/, '');
+            const page = raw ? raw.split('/')[0] : 'home';
+            navigateTo(page, false);
+        });
 
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
@@ -1075,7 +1088,13 @@
         window.onload = () => {
             const saved = localStorage.getItem('hi99_lang') || 'en';
             setLanguage(saved);
-            navigateTo('home');
+
+            // Initialize from hash (if present) otherwise default to home
+            const raw = (location.hash || '').replace(/^#/, '');
+            const initialPage = raw ? raw.split('/')[0] : 'home';
+            // Ensure hash matches initial page without pushing history twice
+            navigateTo(initialPage, false);
+            if (!location.hash && initialPage === 'home') location.hash = '';
         };
 
         // Admin import utilities for reviews
