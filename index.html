@@ -78,6 +78,9 @@
             transform: translateY(-5px);
         }
 
+        /* Booking container transition */
+        #booking-container { transition: all 220ms ease; }
+
         .location-overlay {
             background: linear-gradient(to top, rgba(10, 25, 47, 0.9), transparent);
         }
@@ -153,6 +156,9 @@
                 <a href="javascript:void(0)" onclick="navigateTo('fleet')" class="hover:text-gold transition nav-link" id="nav-fleet">
                     <span data-lang="en">Fleet</span><span data-lang="jp">車両紹介</span><span data-lang="es">Flota</span><span data-lang="zh">车队展示</span>
                 </a>
+                <a href="javascript:void(0)" onclick="navigateTo('chauffeurs')" class="hover:text-gold transition nav-link" id="nav-chauffeurs">
+                    <span data-lang="en">Our Chauffeurs</span><span data-lang="jp">ドライバー紹介</span><span data-lang="es">Nuestros Choferes</span><span data-lang="zh">我们的司机</span>
+                </a>
                 <a href="javascript:void(0)" onclick="navigateTo('reviews')" class="hover:text-gold transition nav-link" id="nav-reviews">
                     <span data-lang="en">Reviews</span><span data-lang="jp">レビュー</span><span data-lang="es">Reseñas</span><span data-lang="zh">评论</span>
                 </a>
@@ -185,6 +191,10 @@
                  <span data-lang="en">Fleet</span><span data-lang="jp">車両紹介</span><span data-lang="es">Flota</span><span data-lang="zh">车队展示</span>
             </a>
             <hr>
+              <a href="javascript:void(0)" onclick="navigateTo('chauffeurs')" class="block py-2">
+                  <span data-lang="en">Our Chauffeurs</span><span data-lang="jp">ドライバー紹介</span><span data-lang="es">Nuestros Choferes</span><span data-lang="zh">我们的司机</span>
+              </a>
+              <hr>
             <a href="javascript:void(0)" onclick="navigateTo('terms')" class="block py-2">
                  <span data-lang="en">Terms</span><span data-lang="jp">規約</span><span data-lang="es">Términos</span><span data-lang="zh">条款</span>
             </a>
@@ -446,96 +456,173 @@
                 <div class="text-center mb-12">
                     <h2 class="text-4xl md:text-5xl font-bold mb-4 luxury-font text-gold">
                         <span data-lang="en">Our Premium Selection</span>
-                        <span data-lang="jp">プレミアム・セレクション</span>
-                        <span data-lang="es">Nuestra Selección Premium</span>
-                        <span data-lang="zh">我们的豪华车队</span>
                     </h2>
-                    <p class="text-slate-300 max-w-2xl mx-auto italic">
-                        <span data-lang="en">Hand-picked luxury vehicles, professionally maintained and ready for your arrival.</span>
-                        <span data-lang="jp">厳選された高級車。専門的に整備され、あなたの到着をお待ちしています。</span>
-                        <span data-lang="es">Vehículos de lujo seleccionados, mantenidos profesionalmente y listos para su llegada.</span>
-                        <span data-lang="zh">精心挑选的豪华车队，专业维护，随时为您服务。</span>
-                    </p>
-                </div>
-
-                <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    <!-- Card: First-Class SUV -->
-                    <article class="fleet-card rounded-xl overflow-hidden flex flex-col bg-slate-900">
-                        <div class="relative h-64">
-                            <img src="https://media.chromedata.com/MediaGallery/media/MjkzOTU4Xk1lZGlhIEdhbGxlcnk/_9WeAZSLEZZYsl3kqmhNh-q-NE0ufTEDVY1_LGPGopA4O-yHtspaQcWtkjG9HALYHLE1rFbxRItRfdULANTvr6Gj4JJvYxZV2hprXSdMd97nlPvRqGklX807Mctjvc31n7keuKb9bV-yOWUjjNWUe5dRpYUPPAcrufYVTH75b0nF44fYMUoKrA/cc_2023CAS030068_01_640_GBA.png" alt="Cadillac Escalade" class="w-full h-full object-cover opacity-95">
-                            <div class="absolute top-4 left-4 bg-navy/80 text-gold px-3 py-1 rounded text-xs font-bold">Popular</div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h4 class="text-lg font-bold text-gold mb-1">First-Class SUV</h4>
-                            <p class="text-sm text-slate-300 mb-4">Cadillac Escalade — spacious seating, premium sound, and complimentary bottled water.</p>
-                            <div class="mt-auto flex items-center justify-between">
-                                <div class="text-xs text-slate-300 uppercase font-bold tracking-widest">
-                                    <span class="inline-flex items-center mr-4"><i class="fa-solid fa-users text-gold mr-2"></i>5 Pax</span>
-                                    <span class="inline-flex items-center"><i class="fa-solid fa-suitcase text-gold mr-2"></i>4 Bags</span>
+                    <div class="grid gap-8 grid-cols-1 md:grid-cols-3 md:grid-rows-2">
+                        <!-- Card: First-Class SUV -->
+                        <article class="fleet-card rounded-xl overflow-hidden flex flex-col bg-slate-900 md:col-start-1 md:row-start-1">
+                            <div class="relative h-48 md:h-56 p-3">
+                                <img src="https://aecsv.com/wp-content/uploads/2023/06/escalade-sp-black-raven.webp" alt="Cadillac Escalade" class="block w-full h-full object-contain object-center rounded-t-xl opacity-95">
+                                <div class="absolute top-3 left-3 z-30 pointer-events-none">
+                                    <div class="bg-gold text-navy font-bold text-sm px-6 py-2 rounded-lg shadow-lg" style="transform: rotate(-12deg) scale(1.05); transform-origin: left top;">Popular</div>
                                 </div>
-                                <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
                             </div>
-                        </div>
-                    </article>
-
-                    <!-- Card: Luxury Sedan -->
-                    <article class="fleet-card rounded-xl overflow-hidden flex flex-col bg-slate-900">
-                        <div class="relative h-64">
-                            <img src="https://eliteblackcarservices.com/wp-content/uploads/2018/01/lincoln-continental.jpg" alt="Lincoln Continental" class="w-full h-full object-cover opacity-95">
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h4 class="text-lg font-bold text-gold mb-1">Executive Sedan</h4>
-                            <p class="text-sm text-slate-300 mb-4">Lincoln Continental — refined comfort for private transfers and corporate travel.</p>
-                            <div class="mt-auto flex items-center justify-between">
-                                <div class="text-xs text-slate-300 uppercase font-bold tracking-widest">
-                                    <span class="inline-flex items-center mr-4"><i class="fa-solid fa-users text-gold mr-2"></i>2 Pax</span>
-                                    <span class="inline-flex items-center"><i class="fa-solid fa-suitcase text-gold mr-2"></i>2 Bags</span>
+                            <div class="p-4 flex-1 flex flex-col">
+                                <h4 class="text-base font-bold text-gold mb-1">First-Class SUV</h4>
+                                <p class="text-sm text-slate-300 mb-3">Cadillac Escalade ESV — crafted for travelers who value space, sophistication, and a commanding ride. This vehicle delivers an elevated experience with advanced features and thoughtful onboard amenities.</p>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <div class="text-xs text-slate-300 uppercase font-bold tracking-widest">
+                                        <span class="inline-flex items-center mr-3"><i class="fa-solid fa-users text-gold mr-2"></i>5 Pax</span>
+                                        <span class="inline-flex items-center"><i class="fa-solid fa-suitcase text-gold mr-2"></i>4 Bags</span>
+                                    </div>
+                                    <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-3 py-1.5 rounded font-bold uppercase text-xs">Book Now</a>
                                 </div>
-                                <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
                             </div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Card: Business-Class SUV -->
-                    <article class="fleet-card rounded-xl overflow-hidden flex flex-col bg-slate-900">
-                        <div class="relative h-64">
-                            <img src="https://images.hgmsites.net/lrg/2019-cadillac-escalade-4wd-4-door-platinum-angular-front-exterior-view_100700221_l.jpg" alt="Business SUV" class="w-full h-full object-cover opacity-95">
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h4 class="text-lg font-bold text-gold mb-1">Business-Class SUV</h4>
-                            <p class="text-sm text-slate-300 mb-4">Stretch Escalade/Suburban options for groups wanting privacy and arrival impact.</p>
-                            <div class="mt-auto flex items-center justify-between">
-                                <div class="text-xs text-slate-300 uppercase font-bold tracking-widest">
-                                    <span class="inline-flex items-center mr-4"><i class="fa-solid fa-users text-gold mr-2"></i>5 Pax</span>
-                                    <span class="inline-flex items-center"><i class="fa-solid fa-suitcase text-gold mr-2"></i>4 Bag</span>
-                                </div>
-                                <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
+                        <!-- Card: Executive Sedan -->
+                        <article class="fleet-card rounded-xl overflow-hidden flex flex-col bg-slate-900 md:col-start-2 md:row-start-1">
+                            <div class="relative h-48 md:h-56 p-3">
+                                <img src="https://eliteblackcarservices.com/wp-content/uploads/2018/01/lincoln-continental.jpg" alt="Lincoln Continental" class="block w-full h-full object-contain object-center rounded-t-xl opacity-95">
                             </div>
-                        </div>
-                    </article>
+                            <div class="p-4 flex-1 flex flex-col">
+                                <h4 class="text-base font-bold text-gold mb-1">Executive Sedan</h4>
+                                <p class="text-sm text-slate-300 mb-3">Lincoln Continental, Cadillac CT6, Cadillac XTS, or comparable models — offering a smooth, composed drive with an emphasis on discretion. Well suited for professional engagements, private appointments, and seamless city transfers.</p>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <div class="text-xs text-slate-300 uppercase font-bold tracking-widest">
+                                        <span class="inline-flex items-center mr-3"><i class="fa-solid fa-users text-gold mr-2"></i>2 Pax</span>
+                                        <span class="inline-flex items-center"><i class="fa-solid fa-suitcase text-gold mr-2"></i>2 Bags</span>
+                                    </div>
+                                    <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-3 py-1.5 rounded font-bold uppercase text-xs">Book Now</a>
+                                </div>
+                            </div>
+                        </article>
 
-                    <!-- Card: Executive Van -->
-                    <article class="fleet-card rounded-xl overflow-hidden flex flex-col bg-slate-900">
-                        <div class="relative h-64">
-                            <img src="https://www.careynola.com/wp-content/uploads/2020/01/sprinter_van.png" alt="Mercedes Sprinter" class="w-full h-full object-cover opacity-95">
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h4 class="text-lg font-bold text-gold mb-1">Executive Sprinter</h4>
-                            <p class="text-sm text-slate-300 mb-4">Mercedes Sprinter — ideal for groups and airport transfers with generous cargo space.</p>
-                            <div class="mt-auto flex items-center justify-between">
-                                <div class="text-xs text-slate-300 uppercase font-bold tracking-widest">
-                                    <span class="inline-flex items-center mr-4"><i class="fa-solid fa-users text-gold mr-2"></i>14 Pax</span>
-                                    <span class="inline-flex items-center"><i class="fa-solid fa-suitcase text-gold mr-2"></i>Cargo</span>
-                                </div>
-                                <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-4 py-2 rounded font-bold uppercase text-xs">Book Now</a>
+                        <!-- Card: Business-Class SUV -->
+                        <article class="fleet-card rounded-xl overflow-hidden flex flex-col bg-slate-900 md:col-start-3 md:row-start-1">
+                            <div class="relative h-48 md:h-56 p-3">
+                                <img src="https://images.hgmsites.net/lrg/2019-cadillac-escalade-4wd-4-door-platinum-angular-front-exterior-view_100700221_l.jpg" alt="Business SUV" class="block w-full h-full object-contain object-center rounded-t-xl opacity-95">
                             </div>
-                        </div>
-                    </article>
+                            <div class="p-4 flex-1 flex flex-col">
+                                <h4 class="text-base font-bold text-gold mb-1">Business-Class SUV</h4>
+                                <p class="text-sm text-slate-300 mb-3">Selected full-size luxury SUVs — balancing presence with practicality for small groups. A dependable option for clients who want comfort, security, and a strong first impression.</p>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <div class="text-xs text-slate-300 uppercase font-bold tracking-widest">
+                                        <span class="inline-flex items-center mr-3"><i class="fa-solid fa-users text-gold mr-2"></i>5 Pax</span>
+                                        <span class="inline-flex items-center"><i class="fa-solid fa-suitcase text-gold mr-2"></i>4 Bag</span>
+                                    </div>
+                                    <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-3 py-1.5 rounded font-bold uppercase text-xs">Book Now</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card: Executive Sprinter -->
+                        <article class="fleet-card rounded-xl overflow-hidden flex flex-col bg-slate-900 md:col-start-1 md:row-start-2">
+                            <div class="relative h-48 md:h-56 p-3">
+                                <img src="https://www.careynola.com/wp-content/uploads/2020/01/sprinter_van.png" alt="Mercedes Sprinter" class="block w-full h-full object-contain object-center rounded-t-xl opacity-95">
+                            </div>
+                            <div class="p-4 flex-1 flex flex-col">
+                                <h4 class="text-base font-bold text-gold mb-1">Executive Sprinter</h4>
+                                <p class="text-sm text-slate-300 mb-3">Mercedes-Benz Sprinter — designed to transport multiple passengers without compromising refinement. An excellent solution for airport service, corporate outings, and travel requiring generous luggage accommodation.</p>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <div class="text-xs text-slate-300 uppercase font-bold tracking-widest">
+                                        <span class="inline-flex items-center mr-3"><i class="fa-solid fa-users text-gold mr-2"></i>14 Pax</span>
+                                        <span class="inline-flex items-center"><i class="fa-solid fa-suitcase text-gold mr-2"></i>Cargo</span>
+                                    </div>
+                                    <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-navy px-3 py-1.5 rounded font-bold uppercase text-xs">Book Now</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-    <!-- Page: GALLERY -->
+            <!-- Page: CHAUFFEURS -->
+            <div id="page-chauffeurs" class="page-content bg-white pt-12 pb-24">
+                <section class="py-20 px-4">
+                    <div class="max-w-7xl mx-auto text-center">
+                        <h2 class="text-4xl font-bold luxury-font text-navy mb-6">
+                            <span data-lang="en">Our Chauffeurs</span><span data-lang="jp">ドライバー紹介</span><span data-lang="es">Nuestros Choferes</span><span data-lang="zh">我们的司机</span>
+                        </h2>
+                        <p class="text-slate-500 mb-8 max-w-2xl mx-auto">Meet our professional chauffeurs — experienced, courteous, and committed to your comfort.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                            <!-- Chauffeur 1: Chhay (first) -->
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm text-left">
+                                <img src="Photos/Chauffeur Chhay.JPG" alt="Chauffeur Chhay" class="w-full object-contain max-h-72 mx-auto">
+                                <div class="p-4">
+                                    <h4 class="font-bold text-navy mb-1">Chauffeur Chhay</h4>
+                                    <p class="text-sm text-slate-500">Lead chauffeur — friendly, punctual, and fluent in English.</p>
+                                </div>
+                            </div>
+
+                            <!-- Chauffeur 2: Andy -->
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm text-left">
+                                <img src="Photos/Chauffeur Andy.JPG" alt="Chauffeur Andy" class="w-full object-contain max-h-72 mx-auto">
+                                <div class="p-4">
+                                    <h4 class="font-bold text-navy mb-1">Chauffeur Andy</h4>
+                                    <p class="text-sm text-slate-500">Experienced chauffeur with excellent local knowledge.</p>
+                                </div>
+                            </div>
+
+                            <!-- Chauffeur 3: David -->
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm text-left">
+                                <img src="Photos/Chauffeur David.png" alt="Chauffeur David" class="w-full object-contain max-h-72 mx-auto">
+                                <div class="p-4">
+                                    <h4 class="font-bold text-navy mb-1">Chauffeur David</h4>
+                                    <p class="text-sm text-slate-500">Professional and courteous — perfect for VIP transfers.</p>
+                                </div>
+                            </div>
+
+                            <!-- Chauffeur 4: Joseph -->
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm text-left">
+                                <img src="Photos/Chauffeur Joseph.png" alt="Chauffeur Joseph" class="w-full object-contain max-h-72 mx-auto">
+                                <div class="p-4">
+                                    <h4 class="font-bold text-navy mb-1">Chauffeur Joseph</h4>
+                                    <p class="text-sm text-slate-500">Friendly and attentive service for families and groups.</p>
+                                </div>
+                            </div>
+
+                            <!-- Chauffeur 5: Le -->
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm text-left">
+                                <img src="Photos/Chauffeur Le.png" alt="Chauffeur Le" class="w-full object-contain max-h-72 mx-auto">
+                                <div class="p-4">
+                                    <h4 class="font-bold text-navy mb-1">Chauffeur Le</h4>
+                                    <p class="text-sm text-slate-500">Customer-focused and safety-minded chauffeur.</p>
+                                </div>
+                            </div>
+
+                            <!-- Chauffeur 6: Lee -->
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm text-left">
+                                <img src="Photos/Chauffeur Lee.JPG" alt="Chauffeur Lee" class="w-full object-contain max-h-72 mx-auto">
+                                <div class="p-4">
+                                    <h4 class="font-bold text-navy mb-1">Chauffeur Lee</h4>
+                                    <p class="text-sm text-slate-500">Knowledgeable about the best local routes and sights.</p>
+                                </div>
+                            </div>
+
+                            <!-- Chauffeur 7: Paul -->
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm text-left">
+                                <img src="Photos/Chauffeur Paul.JPG" alt="Chauffeur Paul" class="w-full object-contain max-h-72 mx-auto">
+                                <div class="p-4">
+                                    <h4 class="font-bold text-navy mb-1">Chauffeur Paul</h4>
+                                    <p class="text-sm text-slate-500">Attentive and professional — ideal for private tours.</p>
+                                </div>
+                            </div>
+
+                            <!-- Chauffeur 8: Tran -->
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm text-left">
+                                <img src="Photos/Chauffeur Tran.JPG" alt="Chauffeur Tran" class="w-full object-contain max-h-72 mx-auto">
+                                <div class="p-4">
+                                    <h4 class="font-bold text-navy mb-1">Chauffeur Tran</h4>
+                                    <p class="text-sm text-slate-500">Professional driver with excellent customer reviews.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Page: GALLERY -->
     <div id="page-gallery" class="page-content bg-white pt-12 pb-24">
         <section class="py-20 px-4">
             <div class="max-w-6xl mx-auto text-center">
@@ -893,13 +980,13 @@
                     <span data-lang="zh">我们在此加载预订流程。如目标页面不允许嵌入，请使用下方按钮在新标签页打开。</span>
                 </p>
 
-                <div class="w-full h-[700px] bg-slate-100 rounded-xl overflow-hidden mb-4">
-                    <iframe id="booking-iframe" src="https://customer.moovs.app/hawaiiviptransport/new/info" class="w-full h-full" frameborder="0" sandbox="allow-same-origin allow-scripts allow-forms allow-popups"></iframe>
-                </div>
-
-                <div class="flex items-center justify-center gap-4">
+                <div class="flex items-center justify-center gap-4 mb-4">
                     <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-navy px-6 py-3 rounded font-bold uppercase tracking-widest">OR Open Booking in New Tab</a>
                     <button onclick="navigateTo('home')" class="px-6 py-3 rounded border border-slate-200">Return Home</button>
+                </div>
+
+                <div id="booking-container" class="w-full h-[700px] bg-slate-100 rounded-xl overflow-hidden mx-auto">
+                    <iframe id="booking-iframe" src="https://customer.moovs.app/hawaiiviptransport/new/info" class="w-full h-full" frameborder="0" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="display:block;border:0;min-height:100%;"></iframe>
                 </div>
             </div>
         </section>
@@ -1069,6 +1156,9 @@
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenu) mobileMenu.classList.add('hidden');
 
+            // Adjust booking iframe container size after navigation
+            if (typeof resizeBookingIframe === 'function') setTimeout(resizeBookingIframe, 60);
+
             if (updateHash) {
                 const hash = pageId === 'home' ? '' : '#' + pageId;
                 if (location.hash !== hash) location.hash = hash;
@@ -1209,6 +1299,33 @@
         }
         updateHawaiiTime();
         setInterval(updateHawaiiTime, 1000);
+
+        // Resize booking iframe container to fill remaining viewport below top bars
+        function resizeBookingIframe() {
+            const iframe = document.getElementById('booking-iframe');
+            if (!iframe) return;
+            const container = iframe.parentElement;
+            if (!container) return;
+
+            const nav = document.querySelector('nav');
+            const topBar = document.querySelector('.bg-navy.text-white');
+            const navH = nav ? nav.getBoundingClientRect().height : 0;
+            const topH = topBar ? topBar.getBoundingClientRect().height : 0;
+
+            // Subtract a small gap so content isn't flush to the browser edge
+            const gap = 12;
+            const target = Math.max(200, window.innerHeight - navH - topH - gap);
+            container.style.height = target + 'px';
+            // Ensure iframe fills container
+            iframe.style.height = '100%';
+            iframe.style.width = '100%';
+        }
+
+        window.addEventListener('resize', resizeBookingIframe);
+        window.addEventListener('hashchange', function(){ setTimeout(resizeBookingIframe, 30); });
+        document.addEventListener('DOMContentLoaded', resizeBookingIframe);
+        // call once now in case booking page is active
+        setTimeout(resizeBookingIframe, 100);
     </script>
 </body>
 </html>
