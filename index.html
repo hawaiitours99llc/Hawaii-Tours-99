@@ -1043,6 +1043,16 @@
         </div>
     </footer>
 
+    <!-- Live Hawaii date/time -->
+    <div class="w-full bg-white">
+        <div class="max-w-7xl mx-auto py-3 text-center text-sm text-slate-600">
+            <div id="hawaii-datetime">
+                <div id="hawaii-time" class="font-bold text-navy">Loading Hawaii time...</div>
+                <div id="hawaii-date" class="text-slate-600 mt-1">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+
     <script>
         function navigateTo(pageId, updateHash = true) {
             document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
@@ -1167,6 +1177,38 @@
         function escapeHtml(str){
             return String(str).replace(/[&<>"']/g, function(m){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"})[m]; });
         }
+
+        // Live Hawaii date/time updater (formats: Time in Honolulu: 10:29:27PM / Thursday, January 22, 2026)
+        function updateHawaiiTime() {
+            const timeEl = document.getElementById('hawaii-time');
+            const dateEl = document.getElementById('hawaii-date');
+            if (!timeEl || !dateEl) return;
+            try {
+                const now = new Date();
+                // Time with seconds and AM/PM (we'll remove the extra space before AM/PM)
+                const timeOpts = { timeZone: 'Pacific/Honolulu', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+                const rawTime = new Intl.DateTimeFormat('en-US', timeOpts).format(now);
+                // Remove space before AM/PM and ensure uppercase (e.g., "10:29:27PM")
+                const timeCompact = rawTime.replace(/\s?(AM|PM)$/i, m => m.replace(/\s+/,'').toUpperCase());
+                timeEl.textContent = 'Time in Honolulu: ' + timeCompact;
+
+                // Date in full weekday, month, day, year
+                const dateOpts = { timeZone: 'Pacific/Honolulu', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const dateStr = new Intl.DateTimeFormat('en-US', dateOpts).format(now);
+                dateEl.textContent = dateStr;
+            } catch (e) {
+                // Fallback using UTC-10 calculation
+                const now = new Date();
+                const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+                const hawaiiTime = new Date(utc - (10 * 60 * 60 * 1000));
+                const t = hawaiiTime.toLocaleTimeString('en-US');
+                const timeCompact = t.replace(/\s?(AM|PM)$/i, m => m.replace(/\s+/,'').toUpperCase());
+                timeEl.textContent = 'Time in Honolulu: ' + timeCompact;
+                dateEl.textContent = hawaiiTime.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            }
+        }
+        updateHawaiiTime();
+        setInterval(updateHawaiiTime, 1000);
     </script>
 </body>
 </html>
