@@ -154,7 +154,7 @@
     <nav class="sticky top-0 z-50 bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center">
             <!-- Logo Section -->
-            <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center h-full">
+            <a href="/" onclick="navigateTo('home'); return false;" class="flex items-center h-full">
                 <img src="Photos/Logo9.png" 
                      alt="Hawaii Tours 99 LLC" 
                      class="h-16 md:h-20 w-auto object-contain block"
@@ -168,33 +168,33 @@
             </a>
             
             <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-navy">
-                <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-gold transition nav-link" id="nav-home">
+                <a href="/" onclick="navigateTo('home'); return false;" class="hover:text-gold transition nav-link" id="nav-home">
                     <span data-lang="en">Home</span><span data-lang="jp">ホーム</span><span data-lang="es">Inicio</span><span data-lang="zh">首页</span>
                 </a>
                 <div class="relative">
-                    <a href="javascript:void(0)" onclick="navigateTo('services')" class="hover:text-gold transition nav-link inline-flex items-center" id="nav-services">
+                    <a href="/services" onclick="navigateTo('services'); return false;" class="hover:text-gold transition nav-link inline-flex items-center" id="nav-services">
                         <span data-lang="en">Services</span><span data-lang="jp">サービス</span><span data-lang="es">Servicios</span><span data-lang="zh">服务项目</span>
                     </a>
                 </div>
-                <a href="javascript:void(0)" onclick="navigateTo('fleet')" class="hover:text-gold transition nav-link" id="nav-fleet">
+                <a href="/fleet" onclick="navigateTo('fleet'); return false;" class="hover:text-gold transition nav-link" id="nav-fleet">
                     <span data-lang="en">Fleet</span><span data-lang="jp">車両紹介</span><span data-lang="es">Flota</span><span data-lang="zh">车队展示</span>
                 </a>
-                <a href="javascript:void(0)" onclick="navigateTo('chauffeurs')" class="hover:text-gold transition nav-link" id="nav-chauffeurs">
+                <a href="/chauffeurs" onclick="navigateTo('chauffeurs'); return false;" class="hover:text-gold transition nav-link" id="nav-chauffeurs">
                     <span data-lang="en">Our Chauffeurs</span><span data-lang="jp">ドライバー紹介</span><span data-lang="es">Nuestros Choferes</span><span data-lang="zh">我们的司机</span>
                 </a>
-                <a href="javascript:void(0)" onclick="navigateTo('reviews')" class="hover:text-gold transition nav-link" id="nav-reviews">
+                <a href="/reviews" onclick="navigateTo('reviews'); return false;" class="hover:text-gold transition nav-link" id="nav-reviews">
                     <span data-lang="en">Reviews</span><span data-lang="jp">レビュー</span><span data-lang="es">Reseñas</span><span data-lang="zh">评论</span>
                 </a>
-                <a href="javascript:void(0)" onclick="navigateTo('gallery')" class="hover:text-gold transition nav-link" id="nav-gallery">
+                <a href="/gallery" onclick="navigateTo('gallery'); return false;" class="hover:text-gold transition nav-link" id="nav-gallery">
                     <span data-lang="en">Gallery</span><span data-lang="jp">ギャラリー</span><span data-lang="es">Galería</span><span data-lang="zh">相册</span>
                 </a>
-                <a href="javascript:void(0)" onclick="navigateTo('terms')" class="hover:text-gold transition nav-link" id="nav-terms">
+                <a href="/terms" onclick="navigateTo('terms'); return false;" class="hover:text-gold transition nav-link" id="nav-terms">
                     <span data-lang="en">Terms</span><span data-lang="jp">規約</span><span data-lang="es">Términos</span><span data-lang="zh">条款</span>
                 </a>
-                <a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-gold transition nav-link" id="nav-contact">
+                <a href="/contact" onclick="navigateTo('contact'); return false;" class="hover:text-gold transition nav-link" id="nav-contact">
                     <span data-lang="en">Contact</span><span data-lang="jp">お問い合わせ</span><span data-lang="es">Contacto</span><span data-lang="zh">联系我们</span>
                 </a>
-                <a href="javascript:void(0)" onclick="navigateTo('booking')" class="bg-gold text-white px-8 py-3 rounded hover:bg-navy transition shadow-lg ml-4">
+                <a href="/booking" onclick="navigateTo('booking'); return false;" class="bg-gold text-white px-8 py-3 rounded hover:bg-navy transition shadow-lg ml-4">
                     <span data-lang="en">Book Now</span><span data-lang="jp">今すぐ予約</span><span data-lang="es">Reservar</span><span data-lang="zh">立即预订</span>
                 </a>
             </div>
@@ -202,39 +202,39 @@
             <button class="lg:hidden text-navy text-2xl" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button>
         </div>
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 p-4 space-y-4 text-xs font-bold uppercase tracking-widest">
-            <a href="javascript:void(0)" onclick="navigateTo('home')" class="block py-2">
+            <a href="/" onclick="navigateTo('home'); return false;" class="block py-2">
                  <span data-lang="en">Home</span><span data-lang="jp">ホーム</span><span data-lang="es">Inicio</span><span data-lang="zh">首页</span>
             </a>
             <hr>
-            <a href="javascript:void(0)" onclick="navigateTo('services')" class="block py-2">
+            <a href="/services" onclick="navigateTo('services'); return false;" class="block py-2">
                  <span data-lang="en">Services</span><span data-lang="jp">サービス</span><span data-lang="es">Servicios</span><span data-lang="zh">服务项目</span>
             </a>
             <hr>
-              <a href="javascript:void(0)" onclick="navigateTo('fleet')" class="block py-2">
+              <a href="/fleet" onclick="navigateTo('fleet'); return false;" class="block py-2">
                   <span data-lang="en">Fleet</span><span data-lang="jp">車両紹介</span><span data-lang="es">Flota</span><span data-lang="zh">车队展示</span>
               </a>
             <hr>
-              <a href="javascript:void(0)" onclick="navigateTo('chauffeurs')" class="block py-2">
+              <a href="/chauffeurs" onclick="navigateTo('chauffeurs'); return false;" class="block py-2">
                   <span data-lang="en">Our Chauffeurs</span><span data-lang="jp">ドライバー紹介</span><span data-lang="es">Nuestros Choferes</span><span data-lang="zh">我们的司机</span>
               </a>
               <hr>
-            <a href="javascript:void(0)" onclick="navigateTo('terms')" class="block py-2">
+            <a href="/terms" onclick="navigateTo('terms'); return false;" class="block py-2">
                  <span data-lang="en">Terms</span><span data-lang="jp">規約</span><span data-lang="es">Términos</span><span data-lang="zh">条款</span>
             </a>
             <hr>
-            <a href="javascript:void(0)" onclick="navigateTo('contact')" class="block py-2">
+            <a href="/contact" onclick="navigateTo('contact'); return false;" class="block py-2">
                  <span data-lang="en">Contact</span><span data-lang="jp">お問い合わせ</span><span data-lang="es">Contacto</span><span data-lang="zh">联系我们</span>
             </a>
               <hr>
-              <a href="javascript:void(0)" onclick="navigateTo('reviews')" class="block py-2">
+              <a href="/reviews" onclick="navigateTo('reviews'); return false;" class="block py-2">
                   <span data-lang="en">Reviews</span><span data-lang="jp">レビュー</span><span data-lang="es">Reseñas</span><span data-lang="zh">评论</span>
               </a>
               <hr>
-              <a href="javascript:void(0)" onclick="navigateTo('gallery')" class="block py-2">
+              <a href="/gallery" onclick="navigateTo('gallery'); return false;" class="block py-2">
                    <span data-lang="en">Gallery</span><span data-lang="jp">ギャラリー</span><span data-lang="es">Galería</span><span data-lang="zh">相册</span>
               </a>
             <hr>
-            <a href="javascript:void(0)" onclick="navigateTo('booking')" class="block text-center bg-gold text-navy px-4 py-3 rounded font-bold">
+            <a href="/booking" onclick="navigateTo('booking'); return false;" class="block text-center bg-gold text-navy px-4 py-3 rounded font-bold">
                 <span data-lang="en">Book Now</span><span data-lang="jp">今すぐ予約</span><span data-lang="es">Reservar</span><span data-lang="zh">立即预订</span>
             </a>
         </div>
@@ -261,77 +261,77 @@
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">PRIVATE AVIATION</h4>
                             <p class="text-sm text-slate-600 mb-3">Exclusive chauffeured transfers to and from private jet terminals (FBOs). VIP meet-and-greet, luggage assistance, and real-time flight tracking.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-private-aviation')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-private-aviation" onclick="navigateTo('service-private-aviation'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">HOURLY CHARTER</h4>
                             <p class="text-sm text-slate-600 mb-3">Book a vehicle by the hour for flexible transportation, errands, or multi-stop itineraries with a dedicated chauffeur.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-hourly-charter')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-hourly-charter" onclick="navigateTo('service-hourly-charter'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">CORPORATE TRANSFER</h4>
                             <p class="text-sm text-slate-600 mb-3">Professional, discreet transfers for executives, meetings, and corporate events with account billing options.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-corporate-transfer')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-corporate-transfer" onclick="navigateTo('service-corporate-transfer'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">BAGGAGE CLAIM</h4>
                             <p class="text-sm text-slate-600 mb-3">Efficient meet-and-assist at baggage claim to help speed you through arrivals and onto your vehicle.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-baggage-claim')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-baggage-claim" onclick="navigateTo('service-baggage-claim'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">MEET & GREET</h4>
                             <p class="text-sm text-slate-600 mb-3">Personalized meet & greet services with signage, expedited assistance, and luggage handling.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-meet-greet')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-meet-greet" onclick="navigateTo('service-meet-greet'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">LEI GREETING</h4>
                             <p class="text-sm text-slate-600 mb-3">Traditional Hawaiian lei greeting upon arrival to welcome guests in true island style.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-lei-greeting')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-lei-greeting" onclick="navigateTo('service-lei-greeting'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">AIRPORT TRANSFERS</h4>
                             <p class="text-sm text-slate-600 mb-3">Reliable transfers to/from HNL and local terminals with professional chauffeurs and flight tracking.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-airport-transfers')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-airport-transfers" onclick="navigateTo('service-airport-transfers'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">GROUPS & EVENTS</h4>
                             <p class="text-sm text-slate-600 mb-3">Coordinated transport for weddings, conferences, and large groups with tailored fleet options.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-groups-events')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-groups-events" onclick="navigateTo('service-groups-events'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">POINT-TO-POINT TRANSFER</h4>
                             <p class="text-sm text-slate-600 mb-3">Direct transfers across the island—fast, dependable, and comfortable for single trips.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-point-to-point')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-point-to-point" onclick="navigateTo('service-point-to-point'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">SIGHTSEEING</h4>
                             <p class="text-sm text-slate-600 mb-3">Private tours tailored to your interests—North Shore, Hanauma Bay, and cultural highlights.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-sightseeing')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-sightseeing" onclick="navigateTo('service-sightseeing'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">LUXURY TRAVEL</h4>
                             <p class="text-sm text-slate-600 mb-3">Bespoke luxury itineraries, personalized service, and premium vehicles for special occasions.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-luxury-travel')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-luxury-travel" onclick="navigateTo('service-luxury-travel'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">CHAUFFEUR SERVICE</h4>
                             <p class="text-sm text-slate-600 mb-3">Professional chauffeurs providing discreet, punctual, and courteous transport for any need.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-chauffeur-service')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-chauffeur-service" onclick="navigateTo('service-chauffeur-service'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">WEDDINGS</h4>
                             <p class="text-sm text-slate-600 mb-3">Elegant transportation solutions for wedding parties, guests, and VIPs on the big day.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-weddings')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-weddings" onclick="navigateTo('service-weddings'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">PROMS</h4>
                             <p class="text-sm text-slate-600 mb-3">Safe and stylish prom transportation with professional drivers and kid-friendly policies.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-proms')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-proms" onclick="navigateTo('service-proms'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                         <div class="service-card p-6 bg-white rounded-xl shadow-sm text-left">
                             <h4 class="font-bold text-navy mb-2">BACHELORETTE PARTIES</h4>
                             <p class="text-sm text-slate-600 mb-3">Group transport for bachelorette events—safe, fun, and reliable with tailored fleet options.</p>
-                            <a href="javascript:void(0)" onclick="navigateTo('service-bachelorette')" class="text-gold font-bold">Learn More</a>
+                            <a href="/service-bachelorette" onclick="navigateTo('service-bachelorette'); return false;" class="text-gold font-bold">Learn More</a>
                         </div>
                             <span data-lang="en">Your gateway to the islands — seamless arrival, elegant departure.</span>
                             <span data-lang="es">Llegada sin problemas, <br>Salida elegante.</span>
@@ -1636,8 +1636,8 @@
             if (typeof resizeBookingIframe === 'function') setTimeout(resizeBookingIframe, 60);
 
             if (updateHash) {
-                const hash = pageId === 'home' ? '' : '#' + pageId;
-                if (location.hash !== hash) location.hash = hash;
+                const path = pageId === 'home' ? '/' : '/' + pageId;
+                try { history.pushState({pageId: pageId}, '', path); } catch(e) { if (location.hash !== ('#'+pageId)) location.hash = '#'+pageId; }
             }
         }
 
