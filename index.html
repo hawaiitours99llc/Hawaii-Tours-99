@@ -493,6 +493,11 @@
                         <div class="max-w-5xl mx-auto">
                             <h2 class="text-2xl font-bold text-navy mb-4">Private Jet Ground Transportation</h2>
 
+                            <div class="prose text-slate-600 mb-6">
+                                <p>Our black‑car service is the invisible partner to every seamless private‑jet arrival and departure. By coordinating directly with FBO teams and monitoring flight movements in real time, our professional chauffeurs ensure your transfer is precisely timed — whether that means meeting you on the tarmac, escorting you through a private terminal, or waiting curbside until your aircraft doors open. The result is a smooth, uninterrupted transition from aircraft to vehicle, where attention to detail—timing, luggage handling, confidentiality, and vehicle readiness—turns a complex sequence of events into a single effortless experience.</p>
+                                <p>To reserve a dedicated black car for your private flight, use our secure booking platform on Moovs — <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" rel="noopener" class="text-gold font-bold">Book here</a> — or call our team directly. We match the right vehicle and crew to your itinerary, providing executive sedans, luxury SUVs, limousines, or Sprinter vans depending on party size and preference. With constant communication and flexible wait options, our service minimizes ground time and maximizes discretion, comfort, and peace of mind for private aviation travelers.</p>
+                            </div>
+
                             <div class="grid md:grid-cols-2 gap-8 mb-8">
                                 <div>
                                     <h3 class="font-semibold mb-3">What We Provide</h3>
@@ -554,7 +559,7 @@
                                     <p class="text-slate-600 text-sm">Call <a href="tel:8083048521" class="text-gold font-bold">(808) 304-8521</a> or book online for a stress-free arrival and departure.</p>
                                 </div>
                                 <div class="flex gap-3">
-                                    <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-navy px-6 py-3 rounded font-bold">Book via Moovs</a>
+                                    <a href="https://customer.moovs.app/hawaiiviptransport/new/info" target="_blank" class="bg-gold text-navy px-6 py-3 rounded font-bold">Book here</a>
                                     <button onclick="navigateTo('services')" class="px-6 py-3 rounded border">Back to Services</button>
                                 </div>
                             </div>
@@ -1553,12 +1558,14 @@
             document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active-page'));
 
-            const target = document.getElementById('page-' + pageId);
+            // Support ids that are either 'page-<id>' or direct ids like 'service-...'
+            let target = document.getElementById(pageId) || document.getElementById('page-' + pageId);
             if (target) {
                 target.classList.add('active');
                 window.scrollTo(0, 0);
             }
 
+            // activate nav link if present (for top-level pages)
             const navLink = document.getElementById('nav-' + pageId);
             if (navLink) navLink.classList.add('active-page');
             const mobileMenu = document.getElementById('mobile-menu');
