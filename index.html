@@ -1641,10 +1641,17 @@
             }
         }
 
-        // Keep URL in sync using hash; respond to hash changes (back/forward)
-        window.addEventListener('hashchange', function() {
-            const raw = (location.hash || '').replace(/^#/, '');
-            const page = raw ? raw.split('/')[0] : 'home';
+        // Use History API (pushState) and respond to popstate for back/forward navigation
+        window.addEventListener('popstate', function(event) {
+            // Prefer state if available, otherwise derive from pathname or hash
+            let page = 'home';
+            if (event.state && event.state.pageId) {
+                page = event.state.pageId;
+            } else {
+                const rawPath = (location.pathname || '').replace(/^\//, '');
+                if (rawPath && rawPath !== '') page = rawPath.split('/')[0];
+                else if (location.hash) page = (location.hash || '').replace(/^#/, '').split('/')[0];
+            }
             navigateTo(page, false);
         });
 
@@ -1665,12 +1672,18 @@
             const saved = localStorage.getItem('hi99_lang') || 'en';
             setLanguage(saved);
 
-            // Initialize from hash (if present) otherwise default to home
-            const raw = (location.hash || '').replace(/^#/, '');
-            const initialPage = raw ? raw.split('/')[0] : 'home';
-            // Ensure hash matches initial page without pushing history twice
+            // Initialize from pathname (preferred) or hash fallback
+            let initialPage = 'home';
+            const rawPath = (location.pathname || '').replace(/^\//, '');
+            if (rawPath && rawPath !== '') initialPage = rawPath.split('/')[0];
+            else {
+                const rawHash = (location.hash || '').replace(/^#/, '');
+                if (rawHash) initialPage = rawHash.split('/')[0];
+            }
+            // Navigate without pushing a new history entry
             navigateTo(initialPage, false);
-            if (!location.hash && initialPage === 'home') location.hash = '';
+            // Replace state so back/forward works from this initial load
+            try { history.replaceState({pageId: initialPage}, '', initialPage === 'home' ? '/' : '/' + initialPage); } catch(e) {}
         };
 
         // Admin import utilities for reviews
