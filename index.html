@@ -119,12 +119,7 @@
     <!-- Top Info Bar -->
     <div class="bg-navy text-white py-2 px-4 border-b border-gold/20 text-[10px] md:text-xs tracking-wider">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex space-x-1.5" id="language-switcher">
-                <button onclick="setLanguage('en')" class="lang-btn px-2 py-0.5 rounded border border-white/20 transition hover:bg-gold active" id="btn-en">EN</button>
-                <button onclick="setLanguage('jp')" class="lang-btn px-2 py-0.5 rounded border border-white/20 transition hover:bg-gold" id="btn-jp">日本語</button>
-                <button onclick="setLanguage('es')" class="lang-btn px-2 py-0.5 rounded border border-white/20 transition hover:bg-gold" id="btn-es">ES</button>
-                <button onclick="setLanguage('zh')" class="lang-btn px-2 py-0.5 rounded border border-white/20 transition hover:bg-gold" id="btn-zh">中文</button>
-            </div>
+            <!-- Language switcher removed as requested -->
             
             <div class="flex flex-wrap justify-center md:justify-end items-center gap-3 md:gap-6 uppercase">
                 <span class="flex items-center">
@@ -239,6 +234,9 @@
             </a>
         </div>
     </nav>
+
+            <!-- Hidden Google Translate element (used to auto-translate full pages) -->
+            <div id="google_translate_element" style="display:none"></div>
 
     <!-- Page: HOME -->
     <div id="page-home" class="page-content active">
@@ -384,8 +382,18 @@
                                 </div>
                             </div>
                             <div class="text-center md:text-left">
-                                <h2 class="text-2xl md:text-3xl font-bold text-navy">Your Gateway to the Islands<br><span class="text-gold">Seamless Arrival,<br>Elegant Departure.</span></h2>
-                                <p class="mt-3 text-sm text-slate-600 leading-relaxed">From the moment you step off your plane at Daniel K. Inouye International Airport, our mission is to ensure your transition to paradise is effortless. Whether you are heading to the vibrant shores of Waikiki or the secluded luxury of Ko Olina, Hawaii Tours 99 LLC provides more than just a ride; we provide peace of mind.</p>
+                                <h2 class="text-2xl md:text-3xl font-bold text-navy">
+                                    <span data-lang="en">Your Gateway to the Islands<br><span class="text-gold">Seamless Arrival,<br>Elegant Departure.</span></span>
+                                    <span data-lang="jp">島への入り口<br><span class="text-gold">スムーズな到着、<br>優雅な出発。</span></span>
+                                    <span data-lang="es">Your Gateway to the Islands<br><span class="text-gold">Seamless Arrival,<br>Elegant Departure.</span></span>
+                                    <span data-lang="zh">Your Gateway to the Islands<br><span class="text-gold">Seamless Arrival,<br>Elegant Departure.</span></span>
+                                </h2>
+                                <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+                                    <span data-lang="en">From the moment you step off your plane at Daniel K. Inouye International Airport, our mission is to ensure your transition to paradise is effortless. Whether you are heading to the vibrant shores of Waikiki or the secluded luxury of Ko Olina, Hawaii Tours 99 LLC provides more than just a ride; we provide peace of mind.</span>
+                                    <span data-lang="jp">ダニエル・K・イノウエ国際空港に降り立った瞬間から、パラダイスへの移動を快適にすることが私たちの使命です。ワイキキの活気ある海岸へ向かう際も、コオリナの静かな高級リゾートへ向かう際も、Hawaii Tours 99 LLCは単なる移動手段以上の「安心」を提供します。</span>
+                                    <span data-lang="es">Desde el momento en que desciende del avión en el Aeropuerto Internacional Daniel K. Inouye, nuestra misión es asegurar que su transición al paraíso sea sin esfuerzo. Ya sea que se dirija a las vibrantes playas de Waikiki o al lujo aislado de Ko Olina, Hawaii Tours 99 LLC ofrece más que un traslado; ofrecemos tranquilidad.</span>
+                                    <span data-lang="zh">从您踏下丹尼尔·井上国际机场飞机的瞬间起，我们的使命就是确保您能毫不费力地过渡到天堂般的假期。无论您是前往充满活力的威基基海滩，还是去往柯奥利纳的隐世奢华酒店，Hawaii Tours 99 LLC 提供的不仅仅是乘车服务，更是内心的安宁。</span>
+                                </p>
                                 <div class="mt-6 grid grid-cols-1 gap-4 text-sm">
                                     <div>
                                         <div class="font-semibold">Airport Concierge</div>
@@ -2004,6 +2012,19 @@
             const btn = document.getElementById('btn-' + lang);
             if (btn) btn.classList.add('active');
             localStorage.setItem('hi99_lang', lang);
+
+            // If Google Translate widget is loaded, programmatically switch it.
+            // Map internal codes to Google Translate codes.
+            const gtMap = { 'en': 'en', 'jp': 'ja', 'es': 'es', 'zh': 'zh-CN' };
+            try {
+                const combo = document.querySelector('.goog-te-combo');
+                if (combo && gtMap[lang]) {
+                    combo.value = gtMap[lang];
+                    combo.dispatchEvent(new Event('change'));
+                }
+            } catch (e) {
+                // ignore if translate widget not available yet
+            }
         }
 
         window.onload = () => {
@@ -2035,6 +2056,18 @@
         if (window.location.hash === '#admin') {
             toggleAdmin(true);
         }
+
+        // Load Google Translate widget (used as a quick machine-translation fallback)
+        // Widget UI is hidden via CSS; we only use the internal select to switch languages.
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'ja,es,zh-CN',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
 
         function applyImportedReviews() {
             const raw = document.getElementById('reviews-import').value.trim();
@@ -2155,4 +2188,13 @@
         setTimeout(resizeBookingIframe, 100);
     </script>
 </body>
+<!-- Load Google Translate script last so it doesn't block rendering -->
+<style>
+    /* Hide Google Translate floating banner and tool UI while still enabling translation */
+    .goog-te-banner-frame.skiptranslate { display: none !important; }
+    body { top: 0 !important; }
+    .goog-logo-link { display: none !important; }
+    .goog-te-gadget { display: none !important; }
+</style>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </html>
