@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>404 Not Found — Redirecting…</title>
+  <script>
+    // GitHub Pages serves this 404 for unknown routes; redirect to the SPA root
+    (function () {
+      try {
+        var base = location.pathname;
+        // If repo uses a subpath (e.g. /user/repo/...), keep the repo base
+        var parts = location.pathname.split('/');
+        // If the last part looks like a filename, remove it
+        if (parts.length > 1 && parts[parts.length-1].indexOf('.') !== -1) parts.pop();
+        // Build redirect target: index at the repo root plus hash of original path
+        var repoBase = parts.slice(0, parts.indexOf('')+1).join('/') || '/';
+        var redirectPath = '/' + (location.pathname.replace(/^\//, ''));
+      } catch(e) {}
+      // Fallback: redirect to root index with original path in hash
+      var hash = location.pathname + location.search + location.hash;
+      var target = (location.origin + (location.pathname.indexOf('.github.io') > -1 ? location.pathname.split('/').slice(0,3).join('/') : '/')) + '#/' + encodeURIComponent(hash);
+      // Simpler and robust: go to repository root index.html
+      var repoRoot = location.origin + '/' + (location.pathname.split('/')[1] ? location.pathname.split('/')[1] + '/' + (location.pathname.split('/')[2] ? location.pathname.split('/')[2] + '/' : '') : '');
+      // Try redirecting to index.html at site root preserving path as hash
+      var final = location.origin + '/' + (location.pathname.split('/')[1] ? location.pathname.split('/')[1] + '/' + (location.pathname.split('/')[2] ? location.pathname.split('/')[2] + '/' : '') : '') + 'index.html' + '#' + encodeURIComponent(location.pathname + location.search + location.hash);
+      // If that looks broken, just go to the site root
+      try { location.replace(final); } catch(e) { location.replace('/'); }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting…</p>
+  <p><a href="/">Go to home</a></p>
+</body>
+</html>
